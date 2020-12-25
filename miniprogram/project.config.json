@@ -2,6 +2,11 @@
   "appid": "wxda5fb4f5808e2104",
   "projectname": "store",
   "description": "mini store",
+  "scripts": {
+    "beforeCompile": "yarn tsc",
+    "beforePreview": "yarn tsc",
+    "beforeUpload": "yarn tsc"
+  },
   "packOptions": {
     "ignore": []
   },
@@ -17,7 +22,7 @@
     "nodeModules": true,
     "autoAudits": true,
     "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": true,
+    "scopeDataCheck": false,
     "uglifyFileName": true,
     "checkInvalidKey": true,
     "checkSiteMap": true,

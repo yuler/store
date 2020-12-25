@@ -1,0 +1,13 @@
+{
+  "name": "store",
+  "version": "0.0.1",
+  "description": "store",
+  "main": "index.js",
+  "repository": "https://github.com/yuler/store.git",
+  "author": "yuler <is.yuler@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "miniprogram-api-typings": "^3.2.0",
+    "typescript": "^4.1.3"
+  }
+}
