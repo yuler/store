@@ -3,5 +3,6 @@
 node_modules/
 
 # miniprogram
-
 miniprogram/**/*.js
+!miniprogram/**/*.config.js
+miniprogram/app.wxss

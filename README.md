@@ -19,3 +19,10 @@ Mini Store
 
 [Wechat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/) 
 
+### Q&A
+
+#### `/bin/sh: npx: command not found`
+
+```bash
+sudo ln -s "$(which npx)" /usr/bin/npx
+```
