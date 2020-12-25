@@ -1,0 +1,11 @@
+{
+  "window": {
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "navigationBarTitleText": "Store",
+    "navigationBarTextStyle": "black"
+  },
+  "pages": [
+    "pages/home/home"
+  ],
+  "sitemapLocation": "sitemap.json"
+}
