@@ -3,9 +3,9 @@
   "projectname": "store",
   "description": "mini store",
   "scripts": {
-    "beforeCompile": "yarn tsc",
-    "beforePreview": "yarn tsc",
-    "beforeUpload": "yarn tsc"
+    "beforeCompile": "npx tsc && npx tailwindcss build tailwind.css -c tailwind.config.js -o app.wxss && npx replace-in-files --string='* {' --replacement=':root {' ./app.wxss",
+    "beforePreview": "",
+    "beforeUpload": ""
   },
   "packOptions": {
     "ignore": []

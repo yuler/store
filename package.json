@@ -7,7 +7,10 @@
   "author": "yuler <is.yuler@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^10.1.0",
     "miniprogram-api-typings": "^3.2.0",
+    "replace-in-files-cli": "^1.0.0",
+    "tailwindcss": "^2.0.2",
     "typescript": "^4.1.3"
   }
 }
