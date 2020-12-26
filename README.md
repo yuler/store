@@ -2,6 +2,8 @@
 
 Mini Store
 
+This is a side project.
+
 ## Tech Stacks
 
 - [Monorepo](https://en.wikipedia.org/wiki/Monorepo)
@@ -18,6 +20,8 @@ Mini Store
 ### miniprogram
 
 [Wechat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/) 
+
+[Figma Design Link](https://www.figma.com/files/project/21288415/WeChat-MiniPorgram)
 
 ### Q&A
 
