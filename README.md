@@ -9,7 +9,6 @@ This is a side project.
 - [Monorepo](https://en.wikipedia.org/wiki/Monorepo)
 - [Wechat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/)
 - [Electron](https://github.com/electron/electron)
-- [Vercel](https://vercel.com/)
 
 ## Project Struct
 
@@ -21,7 +20,7 @@ This is a side project.
 
 [Wechat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/) 
 
-[Figma Design Link](https://www.figma.com/files/project/21288415/WeChat-MiniPorgram)
+[Figma Design Link](https://www.figma.com/file/d4hDNZV5GkNjLZdBlNbi2S/WeChat-MiniPorgram)
 
 ### Q&A
 
