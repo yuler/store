@@ -1,28 +1,31 @@
 {
   "name": "miniprogram-ts-quickstart",
-  "version": "1.0.0",
-  "description": "A simple miniprogram cms for store",
+  "version": "0.1.0",
+  "description": "A wechat miniprogram for mini store",
   "keywords": [],
   "author": "is.yuler@gmail.com",
   "license": "MIT",
   "scripts": {
-    "build": "yarn build:ts & yarn build:tailwind && yarn build:replace",
-    "build:ts": "yarn tsc",
-    "build:tailwind": "NODE_ENV=production tailwindcss build tailwind.css -o miniprogram/app.wxss --no-autoprefixer",
+    "postinstall": "husky install",
+    "build": "npm run build:ts & npm run build:tw && npm run build:replace",
+    "build:ts": "tsc",
+    "build:tw": "NODE_ENV=production tailwindcss build tailwind.css -o miniprogram/app.wxss --no-autoprefixer",
     "_": "@TODO remove `build:replace` instead of tailwind config",
     "build:replace": "replace-in-files --string='* {' --replacement=':root {' ./miniprogram/app.wxss",
-    "prettier": "prettier --write \"**/*.{js,ts,sjs,json,axml,acss,md}\""
+    "prettier": "prettier --write \"**/*.{js,ts,sjs,json,wxml,wxss,md}\"",
+    "dev": "node scripts/dev",
+    "deploy": "node scripts/deploy"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "lint-staged": {
+    "**/*.{js,ts,sjs,json,wxml,wxss,md}": "npm run prettier"
   },
   "dependencies": {},
   "devDependencies": {
+    "chokidar": "^3.5.1",
     "husky": "^5.1.1",
     "lint-staged": "^10.5.4",
     "miniprogram-api-typings": "^3.2.3",
+    "miniprogram-ci": "^1.0.98",
     "prettier": "^2.2.1",
     "replace-in-files-cli": "^1.0.0",
     "tailwindcss-cli": "^0.1.2",
