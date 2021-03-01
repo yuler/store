@@ -1,0 +1,5 @@
+<swiper>
+  <swiper-item wx:for="{{banners}}" wx:for-item="banner" wx:key="id">
+    <image class="w-full" src="{{banner.imageURL}}" />
+  </swiper-item>
+</swiper>
