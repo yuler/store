@@ -1,16 +1,31 @@
 {
-  "name": "store",
-  "version": "0.0.1",
-  "description": "store",
-  "main": "index.js",
-  "repository": "https://github.com/yuler/store.git",
-  "author": "yuler <is.yuler@gmail.com>",
+  "name": "miniprogram-ts-quickstart",
+  "version": "1.0.0",
+  "description": "A simple miniprogram cms for store",
+  "keywords": [],
+  "author": "is.yuler@gmail.com",
   "license": "MIT",
+  "scripts": {
+    "build": "yarn build:ts & yarn build:tailwind && yarn build:replace",
+    "build:ts": "yarn tsc",
+    "build:tailwind": "NODE_ENV=production tailwindcss build tailwind.css -o miniprogram/app.wxss --no-autoprefixer",
+    "_": "@TODO remove `build:replace` instead of tailwind config",
+    "build:replace": "replace-in-files --string='* {' --replacement=':root {' ./miniprogram/app.wxss",
+    "prettier": "prettier --write \"**/*.{js,ts,sjs,json,axml,acss,md}\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^10.1.0",
-    "miniprogram-api-typings": "^3.2.0",
+    "husky": "^5.1.1",
+    "lint-staged": "^10.5.4",
+    "miniprogram-api-typings": "^3.2.3",
+    "prettier": "^2.2.1",
     "replace-in-files-cli": "^1.0.0",
-    "tailwindcss": "^2.0.2",
-    "typescript": "^4.1.3"
+    "tailwindcss-cli": "^0.1.2",
+    "typescript": "^4.2.2"
   }
 }

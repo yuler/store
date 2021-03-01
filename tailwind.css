@@ -1,0 +1,24 @@
+/* purgecss start ignore */
+/* @tailwind base; */
+/* @tailwind components; */
+/* purgecss end ignore */
+
+@tailwind utilities;
+
+/* Set page backgroud for some in devtools */
+page {
+  background: #F2F2F2;
+  font-size: 32rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  color: #111;
+}
+
+view,
+text {
+  font-family: PingFangSC-Regular, PingFang SC;
+}
+
+/* Set boxSiziing */
+input {
+  box-sizing: border-box;
+}

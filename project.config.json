@@ -1,29 +1,32 @@
 {
-  "appid": "wxda5fb4f5808e2104",
-  "projectname": "store",
-  "description": "mini store",
-  "scripts": {
-    "beforeCompile": "npx tsc && npx tailwindcss build tailwind.css -c tailwind.config.js -o app.wxss && npx replace-in-files --string='* {' --replacement=':root {' ./app.wxss",
-    "beforePreview": "",
-    "beforeUpload": ""
-  },
+  "appid": "@TODO replace me",
+  "projectname": "mp-ts-tailwind",
+  "description": "项目配置文件",
   "packOptions": {
     "ignore": []
   },
+  "miniprogramRoot": "miniprogram/",
+  "compileType": "miniprogram",
+  "libVersion": "2.8.2",
+  "scripts": {
+    "beforeCompile": "yarn build",
+    "beforePreview": "yarn build",
+    "beforeUpload": "yarn build"
+  },
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
-    "enhance": true,
+    "enhance": false,
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
-    "newFeature": true,
+    "newFeature": false,
     "coverView": true,
-    "nodeModules": true,
-    "autoAudits": true,
+    "nodeModules": false,
+    "autoAudits": false,
     "showShadowRootInWxmlPanel": true,
     "scopeDataCheck": false,
-    "uglifyFileName": true,
+    "uglifyFileName": false,
     "checkInvalidKey": true,
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
@@ -46,27 +49,7 @@
     "packNpmRelationList": [],
     "minifyWXSS": true
   },
-  "compileType": "miniprogram",
-  "libVersion": "2.11.3",
-  "debugOptions": {
-    "hidedInDevtools": []
-  },
-  "isGameTourist": false,
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
-  "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
-    "game": {
-      "currentL": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "list": []
-    }
-  }
+  "condition": {}
 }
