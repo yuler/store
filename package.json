@@ -1,5 +1,5 @@
 {
-  "name": "miniprogram-ts-quickstart",
+  "name": "store",
   "version": "0.1.0",
   "description": "A wechat miniprogram for mini store",
   "keywords": [],
@@ -7,10 +7,9 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "husky install",
-    "build": "npm run build:ts & npm run build:tw && npm run build:replace",
+    "build": "npm run build:ts & npm run build:tw",
     "build:ts": "tsc",
-    "build:tw": "windicss './**/*.wxml' -f windi.config.js miniprogram/app.wxss",
-    "build:replace": "replace-in-files --string='* {' --replacement=':root {' ./miniprogram/app.wxss",
+    "build:tw": "windicss 'mp/**/*.wxml' -f windi.config.js -o mp/app.wxss",
     "prettier": "prettier --write \"**/*.{js,ts,sjs,json,wxml,wxss,md}\"",
     "dev": "node scripts/dev",
     "deploy": "node scripts/deploy"

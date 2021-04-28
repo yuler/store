@@ -1,13 +1,15 @@
 const { spawn } = require('child_process')
 const chokidar = require('chokidar')
 
+// watch ts
+spawn('npx', ['tsc -w'], { stdio: 'inherit' })
+
+// watch tw
 chokidar
   .watch(
     [
-      'tailwind.css',
-      'miniprogram/pages/**/*.wxml',
-      'miniprogram/components/**/*.wxml',
-      'tailwind.config.js',
+      'mp/**/*.wxml',
+      'wind.config.js',
     ],
     {
       persistent: true,
@@ -15,13 +17,5 @@ chokidar
   )
   .on('change', (event, path) => {
     console.log(event, path)
-    const child = spawn('npm', ['run', 'build:tw'], { stdio: 'inherit' })
-    child.on('exit', (code) => {
-      if (code != 0) return
-      spawn('npm', ['run', 'build:replace'], { stdio: 'inherit' })
-    })
+    spawn('npm', ['run', 'build:tw'], { stdio: 'inherit' })
   })
-
-chokidar.watch(['miniprogram/**/*.ts']).on('change', (event, path) => {
-  spawn('npm', ['run', 'build:ts'], { stdio: 'inherit' })
-})
