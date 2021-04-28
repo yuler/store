@@ -33,4 +33,6 @@ const appId = require('../project.config.json').appid
     },
     onProgressUpdate: console.log,
   })
+
+  console.log(uploadResult)
 })()
