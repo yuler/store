@@ -16,16 +16,8 @@ This is a side project.
 
 [office site](https://store.yuler.me)
 
-### miniprogram
+### mp
 
 [Wechat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/) 
 
 [Figma Design Link](https://www.figma.com/file/d4hDNZV5GkNjLZdBlNbi2S/WeChat-MiniPorgram)
-
-### Q&A
-
-#### `/bin/sh: npx: command not found`
-
-```bash
-sudo ln -s "$(which npx)" /usr/bin/npx
-```
