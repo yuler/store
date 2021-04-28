@@ -2,7 +2,7 @@ const { spawn } = require('child_process')
 const chokidar = require('chokidar')
 
 // watch ts
-spawn('npx', ['tsc -w'], { stdio: 'inherit' })
+spawn('npx', ['tsc', '-w'], { stdio: 'inherit' })
 
 // watch tw
 chokidar
@@ -15,7 +15,7 @@ chokidar
       persistent: true,
     }
   )
-  .on('change', (event, path) => {
-    console.log(event, path)
+  .on('change', path => {
+    console.log(`[dev: watch]: ${path} changed.`)
     spawn('npm', ['run', 'build:tw'], { stdio: 'inherit' })
   })
