@@ -1,0 +1,27 @@
+# https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow
+
+name: Deploy MiniProgram
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # refs: https://github.community/t5/GitHub-Actions/GitHub-Actions-does-not-respect-skip-ci/m-p/42868
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip ci]')"
+    steps:
+      - uses: actions/checkout@master
+      - shell: bash
+        env:
+          MP_PRIVATE_KEY: ${{ secrets.MP_PRIVATE_KEY }}
+        run: |
+          echo "$MP_PRIVATE_KEY" > private.key
+      - uses: actions/setup-node@master
+        with:
+          node-version: '12.x'
+      - run: |
+        yarn
+        yarn build
+        yarn run deploy
