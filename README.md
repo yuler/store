@@ -18,6 +18,6 @@ This is a side project.
 
 ### mp
 
-[Wechat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/) 
+[Wechat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/)
 
 [Figma Design Link](https://www.figma.com/file/d4hDNZV5GkNjLZdBlNbi2S/WeChat-MiniPorgram)
