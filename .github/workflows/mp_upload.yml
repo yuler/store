@@ -13,7 +13,7 @@ jobs:
         env:
           MP_PRIVATE_KEY: ${{ secrets.MP_PRIVATE_KEY }}
         run: |
-          # TODO: skip don't exist MP_PRIVATE_KEY
+          [[ -z $MP_PRIVATE_KEY ]] && echo "Please set `MP_PRIVATE_KEY` key in actions secrets" && exit 1
           echo "$MP_PRIVATE_KEY" > private.key
       - uses: actions/setup-node@master
         with:
