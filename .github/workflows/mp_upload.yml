@@ -19,6 +19,6 @@ jobs:
         with:
           node-version: '12.x'
       - run: |
-        yarn
-        yarn build
-        yarn mp:upload
+          yarn
+          yarn build
+          yarn mp:upload
