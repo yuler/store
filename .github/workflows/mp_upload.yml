@@ -2,7 +2,7 @@ name: Upload MiniProgram
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   upload:
@@ -13,7 +13,7 @@ jobs:
         env:
           MP_PRIVATE_KEY: ${{ secrets.MP_PRIVATE_KEY }}
         run: |
-          if [[ -z $MP_PRIVATE_KEY ]]
+          if [[ -z $MP_PRIVATE_KEY ]]; then
             echo "##########"
             echo ""
             echo "Please set 'MP_PRIVATE_KEY' key in actions secrets"
@@ -27,6 +27,6 @@ jobs:
         with:
           node-version: '12.x'
       - run: |
-        yarn
-        yarn build
-        yarn mp:upload
+          yarn
+          yarn build
+          yarn mp:upload
