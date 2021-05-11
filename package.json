@@ -11,13 +11,12 @@
     "build:ts": "tsc",
     "build:tw": "windicss 'mp/**/*.wxml' -f windi.config.js -o mp/app.wxss",
     "prettier": "prettier --write \"**/*.{js,ts,sjs,json,wxml,wxss,md}\"",
-    "dev": "node scripts/dev",
-    "deploy": "node scripts/deploy"
+    "mp:dev": "node scripts/dev",
+    "mp:upload": "node scripts/upload"
   },
   "lint-staged": {
     "**/*.{js,ts,sjs,json,wxml,wxss,md}": "npm run prettier"
   },
-  "dependencies": {},
   "devDependencies": {
     "chokidar": "^3.5.1",
     "husky": "^5.1.1",
