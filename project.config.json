@@ -1,7 +1,6 @@
 {
-  "__": "TODO: change `appid`",
-  "appid": "wx6496b056188733f6",
-  "projectname": "Store",
+  "appid": "wx43d4fbc340a982bd",
+  "projectname": "Mini Store",
   "description": "miniprogram project config file",
   "packOptions": {
     "ignore": []
