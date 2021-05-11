@@ -1,23 +1,24 @@
-# Store
+# Mini-Store
 
-Mini Store
+**Mini Store** a WeChat MiniProgram.
 
-This is a side project.
+## Repo Struct
+
+```bash
+.
+├── ...
+├── mp      # miniprogram entry
+├── www     # office web site
+├── ...
+```
 
 ## Tech Stacks
 
-- [Monorepo](https://en.wikipedia.org/wiki/Monorepo)
-- [Wechat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/)
-- [Electron](https://github.com/electron/electron)
+### MiniProgram
 
-## Project Struct
+- [WeChat MiniProgram](https://developers.weixin.qq.com/miniprogram/dev/framework/) for client entry
+- [windicss](https://github.com/windicss/windicss) utility-first CSS framework
 
-### www
+## Design
 
-[office site](https://store.yuler.me)
-
-### mp
-
-[Wechat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/)
-
-[Figma Design Link](https://www.figma.com/file/d4hDNZV5GkNjLZdBlNbi2S/WeChat-MiniPorgram)
+- [WeChat MiniProgram on Figma](https://www.figma.com/file/d4hDNZV5GkNjLZdBlNbi2S/WeChat-MiniPorgram)
