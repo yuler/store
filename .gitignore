@@ -5,8 +5,8 @@ node_modules/
 # miniprogram
 mp/**/*.js
 mp/app.wxss
-
 mp-cloud/**/*.js
+project.private.config.json
 
 # TODO
 TODO.MD
