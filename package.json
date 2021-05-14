@@ -24,6 +24,7 @@
     "miniprogram-api-typings": "^3.2.3",
     "miniprogram-ci": "^1.0.98",
     "prettier": "^2.2.1",
-    "typescript": "^4.2.2"
+    "typescript": "^4.2.2",
+    "windicss": "^3.0.4"
   }
 }
