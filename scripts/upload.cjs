@@ -1,11 +1,10 @@
-import {fileURLToPath} from 'node:url';
-import path from 'node:path';
-import {Project, upload} from 'miniprogram-ci';
+const path = require('path');
+const {Project, upload} = require('miniprogram-ci');
 
-import {version as _version, description} from '../package.json';
-import {appid as appId} from '../project.config.json';
+const {version, description} = require('../package.json');
+const {appid: appId} = require('../project.config.json');
+
 (async () => {
-	const __dirname = path.dirname(fileURLToPath(import.meta.url));
 	const project = new Project({
 		appid: appId,
 		type: 'miniProgram',
@@ -21,7 +20,7 @@ import {appid as appId} from '../project.config.json';
 	});
 	const uploadResult = await upload({
 		project,
-		version: _version,
+		version,
 		desc: description,
 		setting: {
 			es7: true,

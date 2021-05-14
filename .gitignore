@@ -6,6 +6,8 @@ node_modules/
 mp/**/*.js
 mp/app.wxss
 mp-cloud/**/*.js
+
+private.key
 project.private.config.json
 
 # TODO
