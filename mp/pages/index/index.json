@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "app-banner": "/components/appBanner/appBanner"
+    "app-banner": "/components/app-banner/app-banner"
   }
 }

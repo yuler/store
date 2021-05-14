@@ -1,6 +1,6 @@
 interface Banner {
-  id: string
-  name?: string
-  imageURL: string
-  imageHref?: string
+	id: string;
+	name?: string;
+	imageURL: string;
+	imageHref?: string;
 }

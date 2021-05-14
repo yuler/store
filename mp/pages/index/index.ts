@@ -1,9 +1,11 @@
-import { MOCK_BANNERS } from '../../mock'
+import {MOCK_BANNERS} from '../../mock.js';
 
 Page({
-  data: {
-    banners: MOCK_BANNERS,
-  },
+	data: {
+		banners: MOCK_BANNERS
+	},
 
-  onLoad() {},
-})
+	onLoad() {
+		console.log('onLoad');
+	}
+});
