@@ -8,6 +8,7 @@
 	"type": "module",
 	"scripts": {
 		"postinstall": "husky install",
+		"test": "xo && npm run build",
 		"build": "npm run build:ts && npm run build:tw",
 		"build:ts": "tsc",
 		"build:tw": "windicss 'mp/**/*.wxml' -f windi.config.cjs -o mp/app.wxss",
