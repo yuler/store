@@ -7,10 +7,14 @@
 ```bash
 .
 ├── ...
-├── mp      # miniprogram entry
+├── mp      # MiniProgram client
 ├── www     # office web site
 ├── ...
 ```
+
+## GitHub Actions
+
+- Add label `upload_miniprogram` for trigger `upload_miniprogram` workflow
 
 ## Tech Stacks
 
