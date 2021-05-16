@@ -1,3 +1,5 @@
+import {debug} from './debug.js';
+
 export interface PresetData {
 	/**
 	 * The page loading state.
@@ -49,6 +51,7 @@ MP.Page.InstanceProperties &
 MP.Page.InstanceMethods<TData & PresetData> &
 MP.Page.Data<TData & PresetData> &
 TCustom;
+type PageQuery = Record<string, string | undefined>;
 
 /**
  * The enhancer for MiniPorgram Page constructor
@@ -58,10 +61,19 @@ TCustom;
 export function pageEnhancer<
 	TData extends MP.Page.DataOption,
 	TCustom extends MP.Page.CustomOption
->(options: PageOptions<TData, TCustom>): void {
+>(
+	options: PageOptions<TData, TCustom>
+): void {
+	const originOnLoad = options.onLoad;
+
 	options = {
 		...presetMethods,
 		...options,
+		onLoad(query: PageQuery) {
+			debug('Enhancer', 'onLoad', this.route, {query});
+
+			return originOnLoad?.call(this, query);
+		},
 		data: {
 			...presetData,
 			...options.data
