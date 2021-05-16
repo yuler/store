@@ -1,6 +1,6 @@
 {
   "__": "The MiniPorgram app settings. See: https://bit.ly/2QdDg3E",
-  "pages": ["pages/index/index", "pages/debug/debug"],
+  "pages": ["pages/home/home", "pages/debug/debug"],
   "window": {
     "navigationBarTitleText": "Weixin",
     "backgroundTextStyle": "light",
