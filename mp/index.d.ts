@@ -5,6 +5,8 @@ declare interface IApp {
 	globalData: {
 		debug: boolean;
 	};
+
+	$db: undefined | DB.Database;
 }
 
 interface Banner {
