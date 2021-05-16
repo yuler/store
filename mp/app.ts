@@ -1,5 +1,8 @@
-App({
-	globalData: {},
+App<IApp>({
+	globalData: {
+		// TODO: dynamic open
+		debug: true
+	},
 	onLaunch() {
 		// TODO: try catch
 		wx.cloud.init({
