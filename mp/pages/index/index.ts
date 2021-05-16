@@ -1,11 +1,19 @@
-import {MOCK_BANNERS} from '../../mock.js';
+import {pageEnhancer} from '../../utils/index.js';
 
-Page({
+type Data = {
+	name: string;
+};
+type Option = {
+
+};
+
+pageEnhancer<Data, Option>({
 	data: {
-		banners: MOCK_BANNERS
+		name: 'xxx',
+		$loading: false
 	},
 
 	onLoad() {
-		console.log('onLoad');
+		this.setData({});
 	}
 });
