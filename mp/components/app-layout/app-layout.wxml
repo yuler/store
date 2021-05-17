@@ -1,0 +1,17 @@
+<view class="min-h-screen">
+	<slot name="top">
+		<mp-navigation-bar 
+			title="ABC Store" 
+			back="{{true}}"
+			animated="{{true}}"
+		/>
+	</slot>
+
+	<view style="{{mainHeightStyle}}">
+		<slot name="main"></slot>
+	</view>
+
+	<view class="w-full p-2 bottom-0 left-0 fixed">
+		<slot name="bottom"></slot>
+	</view>
+</view>

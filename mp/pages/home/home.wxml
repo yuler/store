@@ -1,3 +1,18 @@
-<view class="container pt-2">
-  <app-banner banners="{{banners}}" />
-</view>
+<app-layout class="container pt-2">
+	<view slot="top">
+		<mp-navigation-bar 
+			title="ABC1 Store" 
+			back="{{false}}"
+		>
+			<view slot="left">Left</view>
+		</mp-navigation-bar>
+	</view>
+
+	<view slot="main">
+		<view>This is main</view>
+	</view>
+
+	<view slot="bottom">
+		<view>This is bottom</view> 
+	</view>
+</app-layout>

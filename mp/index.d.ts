@@ -6,6 +6,7 @@ declare interface IApp {
 		debug: boolean;
 	};
 
+	$system: undefined | MP.SystemInfo;
 	$db: undefined | DB.Database;
 }
 

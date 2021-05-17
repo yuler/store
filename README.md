@@ -21,6 +21,7 @@
 ### MiniProgram
 
 - [WeChat MiniProgram](https://developers.weixin.qq.com/miniprogram/dev/framework/) for client entry
+- [WeUI 组件库](https://developers.weixin.qq.com/miniprogram/dev/extended/weui/)
 - [windicss](https://github.com/windicss/windicss) utility-first CSS framework
 
 ## Design
