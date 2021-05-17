@@ -2,11 +2,16 @@
   "__": "The MiniPorgram app settings. See: https://bit.ly/2QdDg3E",
   "pages": ["pages/home/home", "pages/debug/debug"],
   "window": {
-    "navigationBarTitleText": "Weixin",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTextStyle": "black"
+    "navigationStyle": "custom"
   },
   "style": "v2",
+  "useExtendedLib": {
+    "weui": true
+  },
+  "usingComponents": {
+    "app-layout": "/components/app-layout/app-layout",
+    "mp-navigation-bar": "weui-miniprogram/navigation-bar/navigation-bar",
+    "mp-dialog": "weui-miniprogram/dialog/dialog"
+  },
   "sitemapLocation": "sitemap.json"
 }

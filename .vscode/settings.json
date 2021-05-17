@@ -4,6 +4,9 @@
     "*.wxml": "html",
     "*.wxs": "javascript"
   },
+  "windicss.includeLanguages": {
+    "*.wxml": "html",
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
