@@ -10,5 +10,5 @@ watch(['mp/**/*.wxml', 'wind.config.js'], {
 })
 	.on('change', path => {
 		console.log(`[dev: watch]: ${path} changed.`);
-		spawn('npm', ['run', 'build:tw'], {stdio: 'inherit'});
+		spawn('npm', ['run', 'build:css'], {stdio: 'inherit'});
 	});
