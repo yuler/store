@@ -10,6 +10,7 @@
   },
   "usingComponents": {
     "app-layout": "/components/app-layout/app-layout",
+    "mp-icon": "weui-miniprogram/icon/icon",
     "mp-navigation-bar": "weui-miniprogram/navigation-bar/navigation-bar",
     "mp-dialog": "weui-miniprogram/dialog/dialog"
   },

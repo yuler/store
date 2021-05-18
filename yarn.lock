@@ -1511,6 +1511,11 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.5.tgz#c131d88bd6713cc4d93b3bb1372edb1983225ff0"
   integrity sha512-gYsNoGkWejBxNO6SNRjOh/xKeZ0H0V+TFzaPzODfBjkAIb0aQgBuixC1brandC/CDJy1wYPwSoYrXpvul7m6yw==
 
+"@yuler/tsconfig@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@yuler/tsconfig/-/tsconfig-0.2.0.tgz#2681e8cfdf6e4c1663ee101247e962f37bfcecff"
+  integrity sha512-g6U7FQQEBMOpUhmZaDLnRospuuV/IPrE/ER0S/xCY3EmAHasXnPly+ityRAovPL3fpfXK9mqYtXnV/cOzdKhpQ==
+
 acorn-jsx@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.1.tgz#fc8661e11b7ac1539c47dbfea2e72b3af34d267b"
@@ -7941,9 +7946,9 @@ widest-line@^3.1.0:
     string-width "^4.0.0"
 
 windicss@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.0.4.tgz#26376eaac80c4c880b1a8a00807a611d51d98333"
-  integrity sha512-sB0SQxEOOmGn0+ZzWBNpsZg0D36nmBvAk8uuxuVyYiQMzISbI+2Jv6R7dWi5qQqIncs9DUHleJmqNk+z98EG8Q==
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/windicss/-/windicss-3.0.6.tgz#882ae9930ff76b7bc2ecb6c54050a510c92ee312"
+  integrity sha512-XO/w6VBnCdniPR1vBNlNZ9BZC2uXV7dDVUQaw/ICk0LArj3xYz6WrtePTeqjCU4085SmracEqxAA+fFoKOxKsw==
 
 word-wrap@^1.2.3:
   version "1.2.3"

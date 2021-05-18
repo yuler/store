@@ -1,10 +1,12 @@
 <app-layout class="container pt-2">
 	<view slot="top">
 		<mp-navigation-bar 
-			title="ABC1 Store" 
 			back="{{false}}"
 		>
-			<view slot="left">Left</view>
+			<view slot="center" class="flex w-full pl-4 left-0 items-center fixed">
+				<open-data type="userAvatarUrl" class="rounded-full h-10 w-10" />
+				<open-data type="userNickName" class="font-bold ml-4 whitespace-nowrap" />
+			</view>
 		</mp-navigation-bar>
 	</view>
 

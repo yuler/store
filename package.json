@@ -9,9 +9,9 @@
 	"scripts": {
 		"postinstall": "husky install",
 		"test": "xo && npm run build",
-		"build": "npm run build:ts && npm run build:tw",
+		"build": "npm run build:ts && npm run build:css",
 		"build:ts": "tsc",
-		"build:tw": "windicss 'mp/**/*.wxml' -f windi.config.cjs -o mp/app.wxss",
+		"build:css": "windicss 'mp/**/*.wxml' -f mp/windi.config.cjs -o mp/app.wxss",
 		"prettier": "prettier --write \"**/*.{js,ts,sjs,json,wxml,wxss,md}\"",
 		"mp:dev": "node scripts/dev",
 		"mp:upload": "node scripts/upload.cjs"
@@ -20,6 +20,7 @@
 		"**/*.{js,ts,sjs,json,wxml,wxss,md}": "xo --fix"
 	},
 	"devDependencies": {
+		"@yuler/tsconfig": "^0.2.0",
 		"chokidar": "^3.5.1",
 		"eslint-config-xo-typescript": "^0.41.1",
 		"husky": "^5.1.1",
