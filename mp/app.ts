@@ -8,6 +8,7 @@ App<IApp>({
 
 	$system: undefined,
 
+	$cloud: undefined,
 	$db: undefined,
 
 	onLaunch() {
@@ -26,6 +27,7 @@ App<IApp>({
 			env: 'test-7grt94kx72509f46',
 			traceUser: true
 		});
+		this.$cloud = wx.cloud
 		this.$db = wx.cloud.database();
 	}
 });

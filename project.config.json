@@ -8,7 +8,7 @@
   "miniprogramRoot": "mp/",
   "cloudbaseRoot": "mp-cloud/",
   "compileType": "miniprogram",
-  "libVersion": "2.10.1",
+  "libVersion": "2.14.0",
   "setting": {
     "urlCheck": true,
     "es6": true,

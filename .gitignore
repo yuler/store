@@ -4,7 +4,6 @@ node_modules/
 
 # miniprogram
 mp/**/*.js
-mp-cloud/**/*.js
 mp/app.wxss
 
 private.key
