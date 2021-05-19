@@ -21,6 +21,7 @@
 	},
 	"devDependencies": {
 		"@yuler/tsconfig": "^0.2.0",
+		"@yuler/utils": "^0.1.2",
 		"chokidar": "^3.5.1",
 		"eslint-config-xo-typescript": "^0.41.1",
 		"husky": "^5.1.1",

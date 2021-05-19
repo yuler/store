@@ -1516,6 +1516,11 @@
   resolved "https://registry.yarnpkg.com/@yuler/tsconfig/-/tsconfig-0.2.0.tgz#2681e8cfdf6e4c1663ee101247e962f37bfcecff"
   integrity sha512-g6U7FQQEBMOpUhmZaDLnRospuuV/IPrE/ER0S/xCY3EmAHasXnPly+ityRAovPL3fpfXK9mqYtXnV/cOzdKhpQ==
 
+"@yuler/utils@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@yuler/utils/-/utils-0.1.2.tgz#e48b049a5ad7417643c079b11c1056919d86f65c"
+  integrity sha512-Qk5Rs/Zw4P/Rs26BoK2fvlR/Qc2GEkZtH9gZJLw0nvlrURoglUkOrE2I8WbBsEtpnTimhvFjbjw8khjRKnXTDg==
+
 acorn-jsx@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.1.tgz#fc8661e11b7ac1539c47dbfea2e72b3af34d267b"
