@@ -1,6 +1,6 @@
 <view class="min-h-screen">
 	<slot name="top">
-		<mp-navigation-bar 
+		<mp-navigation-bar
 			title="ABC Store" 
 			back="{{true}}"
 			animated="{{true}}"

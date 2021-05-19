@@ -1,0 +1,13 @@
+<app-layout>
+    <view slot="top">
+        <mp-navigation-bar
+			title="ABC Store" 
+			back="{{true}}"
+			animated="{{true}}"
+		/>
+    </view>
+
+    <view slot="main">
+        <button bindtap="submit">下单</button>
+    </view>
+</app-layout>

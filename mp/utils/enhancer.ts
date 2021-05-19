@@ -83,3 +83,4 @@ export function pageEnhancer<
 	Page(options);
 }
 
+// TODO: componentEnhancer
