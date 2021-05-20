@@ -1,23 +1,41 @@
-const cloud = require('wx-server-sdk')
+const crypto = require('crypto');
+
+const cloud = require('wx-server-sdk');
+// Const format = require('date-fns/format');
 
 cloud.init({
-  env: cloud.DYNAMIC_CURRENT_ENV
-})
+	env: cloud.DYNAMIC_CURRENT_ENV
+});
 
-// refs: https://developers.weixin.qq.com/miniprogram/dev/wxcloud/reference-sdk-api/open/pay/CloudPay.unifiedOrder.html
-// TODO: 
 exports.main = async (event, context) => {
+	if (process.env.DEBUG) {
+		console.log({event, context});
+	}
 
-  console.log({ event, context }, cloud.DYNAMIC_CURRENT_ENV)
+	const now = Date.now();
+	// Const timestamp = format(now, yyyyMMddsss);
+	const data = body + now;
+	const md5 = crypto.createHash('md5').update(data).digest('hex');
 
-  const res = await cloud.cloudPay.unifiedOrder({
-    functionName: 'payment-callback',
-    envId: 'test-7grt94kx72509f46',
-    subMchId: process.env.MERCH_ID,
-    body: 'body 测试商品',
-    outTradeNo: 'testTradeNo002',
-    totalFee: 1,
-    spbillCreateIp: '127.0.0.1',
-  })
-  return res
-}
+	// TODO: computed `totalFee` query by DB
+	const {body, totalFee = 1} = event;
+	const contextEnv = JSON.parse(context.environment);
+
+	// See: https://bit.ly/2SfNwJC
+	const response = await cloud.cloudPay.unifiedOrder({
+		body,
+		totalFee,
+		// TODO: generate by some rules
+		outTradeNo: md5,
+
+		// Some env values
+		functionName: 'payment-callback',
+		subMchId: process.env.MERCH_ID,
+		envId: contextEnv.SCF_NAMESPACE, // Use current cloud function env
+		spbillCreateIp: contextEnv.WX_CLIENTIP
+	});
+
+	// TODO: Insert DB
+
+	return response;
+};

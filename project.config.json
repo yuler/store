@@ -7,6 +7,7 @@
   },
   "miniprogramRoot": "mp/",
   "cloudbaseRoot": "mp-cloud/",
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "compileType": "miniprogram",
   "libVersion": "2.14.0",
   "setting": {
@@ -46,6 +47,5 @@
   },
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
-  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
   "condition": {}
 }
