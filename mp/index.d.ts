@@ -8,7 +8,7 @@ declare interface IApp {
 
 	$system: undefined | MP.SystemInfo;
 
-	$cloud: undefined | WxCloud
+	$cloud: undefined | WxCloud;
 	$db: undefined | DB.Database;
 }
 
