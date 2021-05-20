@@ -19,6 +19,11 @@ pageEnhancer({
 
 				}
 			})
+
+			// errMsg, requestID, result: { errCode, errMsg, returnCode, returnMsg }
+			
+
+			console.log(response)
 			
 			const payment = (response.result as AnyObject)['payment']
 

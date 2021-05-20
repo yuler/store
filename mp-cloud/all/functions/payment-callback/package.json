@@ -1,0 +1,11 @@
+{
+  "name": "payment-callback",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "author": "yule<is.yuler@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "wx-server-sdk": "~2.4.0"
+  }
+}
