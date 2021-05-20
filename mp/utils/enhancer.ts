@@ -22,6 +22,11 @@ export interface PresetMethods {
 	 * Call `wx.hideLoading`
 	 */
 	$hideLoading(): void;
+
+	/**
+	 * Call `wx.navigateTo`
+	 */
+	$goto(url: string): void;
 }
 
 const presetData: PresetData = {
@@ -34,6 +39,9 @@ const presetMethods: PresetMethods = {
 	},
 	$hideLoading: async () => {
 		return wx.hideLoading();
+	},
+	$goto: async (url: string) => {
+		return wx.navigateTo({url});
 	}
 };
 

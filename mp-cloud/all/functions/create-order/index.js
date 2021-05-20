@@ -12,13 +12,14 @@ exports.main = async (event, context) => {
 		console.log({event, context});
 	}
 
+	const {body, totalFee = 1} = event;
+
 	const now = Date.now();
 	// Const timestamp = format(now, yyyyMMddsss);
 	const data = body + now;
 	const md5 = crypto.createHash('md5').update(data).digest('hex');
 
 	// TODO: computed `totalFee` query by DB
-	const {body, totalFee = 1} = event;
 	const contextEnv = JSON.parse(context.environment);
 
 	// See: https://bit.ly/2SfNwJC

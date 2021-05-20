@@ -6,14 +6,14 @@ type Data = {
 	name: string;
 };
 type Option = {
-
+	gotoProduct: () => void;
 };
 
 pageEnhancer<Data, Option>({
 	data: {
 		name: 'xxx',
 		$loading: false
-	}
+	},
 
 	// TODO: fetch products
 	// async onLoad() {
@@ -23,5 +23,9 @@ pageEnhancer<Data, Option>({
 	// 		.limit(10)
 	// 		.get();
 	// 	this.setData({products});
-	// }
+	// },
+
+	gotoProduct() {
+		this.$goto('/pages/product/product?id=1');
+	}
 });
