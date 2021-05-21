@@ -24,6 +24,7 @@ exports.main = async (event, context) => {
 		.update({
 			data: {
 				status: 1,
+				paidAt: db.serverDate(),
 				updatedAt: db.serverDate()
 			}
 		});
