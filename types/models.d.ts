@@ -1,7 +1,12 @@
+/**
+ * Base model property
+ */
 interface BaseModel {
+	_id: string;
 	createdAt: Date;
 	updatedAt: Date;
-	deleted: boolean;
+	isDeleted: boolean;
+	deletedAt: undefined | Date;
 }
 
 export interface User extends BaseModel {
@@ -34,7 +39,22 @@ export interface Label extends BaseModel {
 	name: string;
 }
 
+export enum OrderStatus {
+	UNPAID,
+	PAID,
+	FINISHED,
+	CANCELED,
+	REFUNDED
+}
+
 export interface Order extends BaseModel {
-	userId: string;
-	orderNO: string;
+	number: string;
+	price: number;
+	status: OrderStatus;
+	createIp: string;
+	// Relation
+	products: Array<{
+		_id: string;
+		amount: number;
+	}>;
 }

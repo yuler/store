@@ -7,36 +7,70 @@ cloud.init({
 	env: cloud.DYNAMIC_CURRENT_ENV
 });
 
+const db = cloud.database();
+
 exports.main = async (event, context) => {
+	const wxContext = cloud.getWXContext();
+	const logger = cloud.logger();
 	if (process.env.DEBUG) {
-		console.log({event, context});
+		logger.log({event, context, wxContext});
 	}
 
-	const {body, totalFee = 1} = event;
+	const {OPENID, CLIENTIP, ENV} = wxContext;
+	const {products} = event;
 
+	// Generate md5 for order number
+	const body = products.length === 1 ?
+		products[0].id :
+		products.map(p => p.id).join(',').slice(100) + '...';
 	const now = Date.now();
+	const content = OPENID + CLIENTIP + body + now;
 	// Const timestamp = format(now, yyyyMMddsss);
-	const data = body + now;
-	const md5 = crypto.createHash('md5').update(data).digest('hex');
+	const md5 = crypto.createHash('md5').update(content).digest('hex');
 
-	// TODO: computed `totalFee` query by DB
-	const contextEnv = JSON.parse(context.environment);
+	// Computed price
+	const ids = products.map(p => p.id || p._id);
+	const result = await db.collection('products')
+		.where({
+			_id: db.command.in(ids)
+			// TODO: skip off online
+		})
+		.field({
+			price: true
+		})
+		.get();
 
+	logger.info({name: 'query products:', products: result.data});
+	// eslint-disable-next-line unicorn/no-array-reduce
+	const price = result.data.reduce((acc, p) => acc + p.price, 0);
+
+	// TODO: try catch?
 	// See: https://bit.ly/2SfNwJC
 	const response = await cloud.cloudPay.unifiedOrder({
 		body,
-		totalFee,
+		totalFee: price,
 		// TODO: generate by some rules
 		outTradeNo: md5,
 
 		// Some env values
 		functionName: 'payment-callback',
 		subMchId: process.env.MERCH_ID,
-		envId: contextEnv.SCF_NAMESPACE, // Use current cloud function env
-		spbillCreateIp: contextEnv.WX_CLIENTIP
+		envId: ENV, // Use current cloud function env
+		spbillCreateIp: CLIENTIP
 	});
 
-	// TODO: Insert DB
+	const data = {
+		number: md5,
+		price,
+		status: 0,
+		createIp: CLIENTIP,
+		products,
+
+		createdAt: db.serverDate(),
+		updatedAt: db.serverDate()
+	};
+	await db.collection('orders')
+		.add({data});
 
 	return response;
 };

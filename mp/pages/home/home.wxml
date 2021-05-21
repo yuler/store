@@ -12,9 +12,13 @@
 
 	<view slot="main">
 		<view class="px-4">
-			<view>This is main</view>
-			
-			<button bind:tap="gotoProduct">商品详情页</button>
+			<view wx:for="{{products}}" wx:key="_id" wx:for-item="product"
+				bind:tap="gotoProduct"
+				data-id="{{product._id}}"
+			>
+				<view class="block">{{product.name}}</view>
+				<image class="block" src="{{product.thumbnail}}" />
+			</view>
 		</view>
 	</view>
 

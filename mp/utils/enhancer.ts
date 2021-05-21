@@ -16,7 +16,7 @@ export interface PresetMethods {
 	/**
 	 * Call `wx.showLoading`
 	 */
-	$showLoading(title: string, mask: boolean): void;
+	$showLoading(title?: string, mask?: boolean): void;
 
 	/**
 	 * Call `wx.hideLoading`

@@ -8,6 +8,8 @@
     </view>
 
     <view slot="main">
+        <view>{{product.name}}</view>
+        <image src="{{product.thumbnail}}"/>
         <button bindtap="submit">下单</button>
     </view>
 </app-layout>

@@ -1,31 +1,33 @@
+import {Porduct} from '../../../types/models.js';
 import {pageEnhancer} from '../../utils/index.js';
 
-// Const $app = getApp<IApp>();
-
 type Data = {
-	name: string;
+	products: Porduct[];
 };
 type Option = {
-	gotoProduct: () => void;
+	gotoProduct: (event: MP.CustomEvent) => void;
 };
+
+const $app = getApp<IApp>();
 
 pageEnhancer<Data, Option>({
 	data: {
-		name: 'xxx',
+		products: [],
 		$loading: false
 	},
 
 	// TODO: fetch products
-	// async onLoad() {
-	// 	const products = await $app.$db
-	// 		?.collection('products')
-	// 		.where({})
-	// 		.limit(10)
-	// 		.get();
-	// 	this.setData({products});
-	// },
+	async onLoad() {
+		const result = await $app.$db
+			?.collection('products')
+			.limit(10)
+			.get();
+		const products = (result?.data as Porduct[]) || [];
+		this.setData({products});
+	},
 
-	gotoProduct() {
-		this.$goto('/pages/product/product?id=1');
+	gotoProduct(event: MP.CustomEvent) {
+		const {id} = event.currentTarget.dataset as {id: string};
+		this.$goto(`/pages/product/product?id=${id}`);
 	}
 });
