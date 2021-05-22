@@ -10,6 +10,9 @@ declare interface IApp {
 
 	$cloud: undefined | WxCloud;
 	$db: undefined | DB.Database;
+
+	// Goto debug page
+	gotoDebug: () => void;
 }
 
 interface Banner {

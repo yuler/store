@@ -1,4 +1,4 @@
-import {debug} from './utils/index.js';
+import {debug, $goto} from './utils/index.js';
 
 App<IApp>({
 	globalData: {
@@ -10,6 +10,10 @@ App<IApp>({
 
 	$cloud: undefined,
 	$db: undefined,
+
+	gotoDebug() {
+		$goto('/subpackages/debug/pages/debug/debug');
+	},
 
 	onLaunch() {
 		// Cache system info

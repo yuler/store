@@ -1,23 +1,29 @@
 {
-  "__": "The MiniPorgram app settings. See: https://bit.ly/2QdDg3E",
-  "pages": [
-    "pages/home/home",
-    "pages/product/product",
-
-    "pages/debug/debug"
-  ],
-  "window": {
-    "navigationStyle": "custom"
-  },
-  "style": "v2",
-  "useExtendedLib": {
-    "weui": true
-  },
-  "usingComponents": {
-    "app-layout": "/components/app-layout/app-layout",
-    "mp-icon": "weui-miniprogram/icon/icon",
-    "mp-navigation-bar": "weui-miniprogram/navigation-bar/navigation-bar",
-    "mp-dialog": "weui-miniprogram/dialog/dialog"
-  },
-  "sitemapLocation": "sitemap.json"
+	"__": "The MiniPorgram app settings. See: https://bit.ly/2QdDg3E",
+	"pages": [
+		"pages/home/home",
+		"pages/product/product"
+	],
+	"subpackages": [
+		{
+			"root": "subpackages/debug",
+			"pages": [
+				"pages/debug/debug"
+			]
+		}
+	],
+	"window": {
+		"navigationStyle": "custom"
+	},
+	"style": "v2",
+	"useExtendedLib": {
+		"weui": true
+	},
+	"usingComponents": {
+		"app-layout": "/components/app-layout/app-layout",
+		"mp-icon": "weui-miniprogram/icon/icon",
+		"mp-navigation-bar": "weui-miniprogram/navigation-bar/navigation-bar",
+		"mp-dialog": "weui-miniprogram/dialog/dialog"
+	},
+	"sitemapLocation": "sitemap.json"
 }

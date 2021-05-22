@@ -45,6 +45,8 @@ const presetMethods: PresetMethods = {
 	}
 };
 
+export const {$showLoading, $hideLoading, $goto} = presetMethods;
+
 // Override from `WechatMiniprogram.Page`'s `Options` & Instance
 type PageOptions<
 	TData extends MP.Page.DataOption,
