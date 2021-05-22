@@ -8,6 +8,8 @@ mp/app.wxss
 
 mp-cloud/test*
 
+types/**/*.js
+
 private.key
 project.private.config.json
 

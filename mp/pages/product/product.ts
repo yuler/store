@@ -40,7 +40,7 @@ pageEnhancer<Data, Option>({
 				name: 'create-order',
 				data: {
 					products: [{
-						id: product._id,
+						_id: product._id,
 						amount: 1
 					}]
 				}

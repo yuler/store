@@ -51,7 +51,7 @@ export interface Order extends BaseModel {
 	number: string;
 	price: number;
 	status: OrderStatus;
-	createIp: string;
+	createdIp: string;
 	paidAt: Date;
 	// Relation
 	products: Array<{

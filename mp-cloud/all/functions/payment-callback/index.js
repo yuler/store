@@ -1,10 +1,8 @@
 const cloud = require('wx-server-sdk');
 
-cloud.init({
-	env: cloud.DYNAMIC_CURRENT_ENV
-});
+cloud.init({env: cloud.DYNAMIC_CURRENT_ENV});
 
-const db = cloud.database();
+const db = cloud.database({throwOnNotFound: false});
 
 // See: https://bit.ly/3bDdIo8
 exports.main = async (event, context) => {
@@ -15,10 +13,12 @@ exports.main = async (event, context) => {
 		logger.log({event, context, wxContext});
 	}
 
+	const {OPENID} = wxContext;
 	const {outTradeNo: number} = event;
 
 	await db.collection('orders')
 		.where({
+			_openid: OPENID,
 			number
 		})
 		.update({

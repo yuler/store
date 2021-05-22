@@ -5,6 +5,10 @@ const $app = getApp<IApp>();
 const titleBarHeight = 44;
 
 Component({
+	properties: {
+		title: String
+	},
+
 	data: {
 		mainHeightStyle: ''
 	},

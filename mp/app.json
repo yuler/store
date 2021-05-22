@@ -2,7 +2,8 @@
 	"__": "The MiniPorgram app settings. See: https://bit.ly/2QdDg3E",
 	"pages": [
 		"pages/home/home",
-		"pages/product/product"
+		"pages/product/product",
+		"pages/orders/index"
 	],
 	"subpackages": [
 		{

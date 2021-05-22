@@ -3,11 +3,9 @@ const crypto = require('crypto');
 const cloud = require('wx-server-sdk');
 // Const format = require('date-fns/format');
 
-cloud.init({
-	env: cloud.DYNAMIC_CURRENT_ENV
-});
+cloud.init({env: cloud.DYNAMIC_CURRENT_ENV});
 
-const db = cloud.database();
+const db = cloud.database({throwOnNotFound: false});
 
 exports.main = async (event, context) => {
 	const wxContext = cloud.getWXContext();
@@ -21,8 +19,8 @@ exports.main = async (event, context) => {
 
 	// Generate md5 for order number
 	const body = products.length === 1 ?
-		products[0].id :
-		products.map(p => p.id).join(',').slice(100) + '...';
+		products[0]._id :
+		products.map(p => p._id).join(',').slice(100) + '...';
 	const now = Date.now();
 	const content = OPENID + CLIENTIP + body + now;
 	// Const timestamp = format(now, yyyyMMddsss);
@@ -60,10 +58,12 @@ exports.main = async (event, context) => {
 	});
 
 	const data = {
+		_openid: OPENID,
+
 		number: md5,
 		price,
 		status: 0,
-		createIp: CLIENTIP,
+		createdIp: CLIENTIP,
 		products,
 
 		createdAt: db.serverDate(),

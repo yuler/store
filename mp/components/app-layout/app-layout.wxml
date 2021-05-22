@@ -1,11 +1,13 @@
 <view class="min-h-screen">
-	<slot name="top">
-		<mp-navigation-bar
-			title="ABC Store" 
-			back="{{true}}"
-			animated="{{true}}"
-		/>
-	</slot>
+	
+	<mp-navigation-bar wx:if="{{title}}"
+		title="{{title}}" 
+		back="{{true}}"
+		animated="{{true}}"
+	/>
+	<block wx:else>
+		<slot name="top" />
+	</block>
 
 	<view style="{{mainHeightStyle}}">
 		<slot name="main"></slot>
