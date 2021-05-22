@@ -1,8 +1,8 @@
-import {Porduct} from '../../../types/models.js';
+import {Product} from '../../../types/models.js';
 import {pageEnhancer} from '../../utils/index.js';
 
 type Data = {
-	products: Porduct[];
+	products: Product[];
 };
 type Option = {
 	gotoProduct: (event: MP.CustomEvent) => void;
@@ -22,7 +22,7 @@ pageEnhancer<Data, Option>({
 			?.collection('products')
 			.limit(10)
 			.get();
-		const products = (result?.data as Porduct[]) || [];
+		const products = (result?.data as Product[]) || [];
 		this.setData({products});
 	},
 

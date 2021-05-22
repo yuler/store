@@ -15,15 +15,15 @@ export interface User extends BaseModel {
 	city: string;
 }
 
-export interface Porduct extends BaseModel {
+export interface Product extends BaseModel {
 	name: string;
-	title: string;
-	brand: string;
-	provider: string;
+	thumbnail: string;
 	price: number;
 	markingPrice: number;
-	thumbnail: string;
+	brand: string;
+	provider: string;
 	description: string;
+
 	carousels: string[];
 
 	createdAt: Date;
@@ -53,9 +53,6 @@ export interface Order extends BaseModel {
 	status: OrderStatus;
 	createdIp: string;
 	paidAt: Date;
-	// Relation
-	products: Array<{
-		_id: string;
-		amount: number;
-	}>;
+	// Snapshot fields
+	products: Array<Pick<Product, '_id' | 'name' | 'thumbnail' | 'price' | 'markingPrice'>>;
 }

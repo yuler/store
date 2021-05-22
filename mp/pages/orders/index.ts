@@ -17,11 +17,11 @@ pageEnhancer<Data, Option>({
 
 	async onLoad() {
 		// Fetch orders
-		// TOOD: Relation product
 		const result = await $app.$db?.collection('orders')
 			.orderBy('createdAt', 'desc')
 			.limit(10)
 			.get();
+
 		const orders = (result?.data ?? []) as Order[];
 		this.setData({orders});
 	}

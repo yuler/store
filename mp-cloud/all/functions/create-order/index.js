@@ -15,9 +15,9 @@ exports.main = async (event, context) => {
 	}
 
 	const {OPENID, CLIENTIP, ENV} = wxContext;
-	const {products} = event;
+	let {products} = event;
 
-	logger.info({name: 'request received products:', products});
+	logger.info({name: 'request received', products});
 
 	// Generate md5 for order number
 	const body = products.length === 1 ?
@@ -36,13 +36,18 @@ exports.main = async (event, context) => {
 			// TODO: skip off online
 		})
 		.field({
-			price: true
+			price: true,
+			// Snapshot fields
+			name: true,
+			thumbnail: true,
+			markingPrice: true
 		})
 		.get();
+	products = result.data;
 
-	logger.info({name: 'db query products:', products: result.data});
+	logger.info({name: 'db query', products});
 	// eslint-disable-next-line unicorn/no-array-reduce
-	const price = result.data.reduce((acc, p) => acc + p.price, 0);
+	const price = products.reduce((acc, p) => acc + p.price, 0);
 
 	// TODO: try catch?
 	// See: https://bit.ly/2SfNwJC

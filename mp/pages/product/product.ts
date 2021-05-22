@@ -1,8 +1,8 @@
 import {debug, pageEnhancer} from '../../utils/index.js';
-import {Porduct} from '../../../types/models.js';
+import {Product} from '../../../types/models.js';
 
 type Data = {
-	product: Porduct;
+	product: Product;
 };
 type Option = {
 	submit: () => void;
@@ -24,7 +24,7 @@ pageEnhancer<Data, Option>({
 			const result = await $app.$db?.collection('products')
 				.doc(id)
 				.get();
-			const product = result?.data as Porduct;
+			const product = result?.data as Product;
 			this.setData({product});
 		} catch (error: unknown) {
 			debug('onLoad', {error});
