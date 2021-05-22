@@ -17,6 +17,8 @@ exports.main = async (event, context) => {
 	const {OPENID, CLIENTIP, ENV} = wxContext;
 	const {products} = event;
 
+	logger.info({name: 'request received products:', products});
+
 	// Generate md5 for order number
 	const body = products.length === 1 ?
 		products[0]._id :
@@ -27,7 +29,7 @@ exports.main = async (event, context) => {
 	const md5 = crypto.createHash('md5').update(content).digest('hex');
 
 	// Computed price
-	const ids = products.map(p => p.id || p._id);
+	const ids = products.map(p => p._id);
 	const result = await db.collection('products')
 		.where({
 			_id: db.command.in(ids)
@@ -38,7 +40,7 @@ exports.main = async (event, context) => {
 		})
 		.get();
 
-	logger.info({name: 'query products:', products: result.data});
+	logger.info({name: 'db query products:', products: result.data});
 	// eslint-disable-next-line unicorn/no-array-reduce
 	const price = result.data.reduce((acc, p) => acc + p.price, 0);
 
