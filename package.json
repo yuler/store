@@ -39,5 +39,8 @@
 			"new-cap": "off",
 			"unicorn/prefer-module": "off"
 		}
+	},
+	"dependencies": {
+		"@cloudbase/manager-node": "^3.9.1"
 	}
 }

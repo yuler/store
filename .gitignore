@@ -1,12 +1,15 @@
 .DS_Store
-
 node_modules/
+
+.env
 
 # miniprogram
 mp/**/*.js
 mp/app.wxss
 
 mp-cloud/test*
+
+console/**/*.js
 
 types/**/*.js
 
