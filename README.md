@@ -23,7 +23,11 @@
 - [WeUI 组件库](https://developers.weixin.qq.com/miniprogram/dev/extended/weui/)
 - [windicss](https://github.com/windicss/windicss) utility-first CSS framework
 
-## Wechat Devtools CLI
+## Some Links
+
+- [Tencent Cloud Base](https://console.cloud.tencent.com/tcb)
+
+## WeChat Devtools CLI
 
 - [CLI](https://developers.weixin.qq.com/miniprogram/dev/devtools/cli.html)
 
