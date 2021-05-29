@@ -13,6 +13,7 @@ console/**/*.js
 
 types/**/*.js
 
+key.json
 private.key
 project.private.config.json
 

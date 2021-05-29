@@ -17,17 +17,15 @@
         })
         
         const auth = app.auth();
+
         async function login(){
-            // 1. 建议登录前先判断当前是否已经登录
             const loginState = await auth.getLoginState();
-            debugger
-            if(!loginState){
-                // 2. 调用微信登录API
-                await auth.weixinAuthProvider({
-                    appid: "wxca754f5347ff015c", // 微信公众号的Appid
-                    scope: "snsapi_base"
-                }).signInWithRedirect();
+            if (!loginState) {
+                const response = await fetch('https://test-7grt94kx72509f46-1305905251.ap-shanghai.app.tcloudbase.com/create-ticket');
+                const ticket = await response.text()
+                await auth.customAuthProvider().signIn(ticket);
             }
+            console.log(loginState)
         }
         login();
 
