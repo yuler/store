@@ -20,6 +20,7 @@
 		"**/*.{js,ts,sjs,json,wxml,wxss,md}": "xo --fix"
 	},
 	"devDependencies": {
+		"@types/node": "^15.6.1",
 		"@yuler/tsconfig": "^0.2.0",
 		"@yuler/utils": "^0.1.2",
 		"chokidar": "^3.5.1",
@@ -39,8 +40,5 @@
 			"new-cap": "off",
 			"unicorn/prefer-module": "off"
 		}
-	},
-	"dependencies": {
-		"@cloudbase/manager-node": "^3.9.1"
 	}
 }

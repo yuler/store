@@ -1,0 +1,11 @@
+{
+  "name": "admin",
+  "version": "0.0.1",
+  "description": "cms admin for web",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "@cloudbase/manager-node": "^3.9.1",
+    "dotenv": "^10.0.0"
+  }
+}

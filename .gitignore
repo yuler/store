@@ -9,7 +9,7 @@ mp/app.wxss
 
 mp-cloud/test*
 
-console/**/*.js
+admin/**/*.js
 
 types/**/*.js
 
