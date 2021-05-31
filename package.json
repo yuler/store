@@ -16,7 +16,7 @@
 		"build:mp": "npm run build:mp:ts && npm run build:mp:css",
 		"build:admin": "(cd admin && yarn build)",
 		"upload:mp": "(cd mp && node scripts/upload.cjs)",
-		"test": "xo && npm run build",
+		"test": "xo && npm run-p build:**",
 		"prettier": "prettier --write \"**/*.{js,ts,sjs,json,wxml,wxss,md}\""
 	},
 	"lint-staged": {
