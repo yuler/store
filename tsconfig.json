@@ -1,10 +1,6 @@
 {
 	"extends": "@yuler/tsconfig",
 	"compilerOptions": {
-		"declaration": false,
-		"module": "ES2020",
-		"lib": ["ESNext"],
-		"types": ["node", "miniprogram-api-typings"],
 		"paths": {
 			"@shared": ["./shared"],
 		}

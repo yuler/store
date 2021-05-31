@@ -1,0 +1,14 @@
+{
+	"extends": "../tsconfig.json",
+	"compilerOptions": {
+		"declaration": false,
+		"module": "ES2020",
+		"lib": ["ESNext"],
+		"types": ["miniprogram-api-typings"],
+		"paths": {
+			"@shared": ["./shared"],
+		}
+	},
+	"include": ["./**/*.ts"],
+	"exclude": ["node_modules"]
+}

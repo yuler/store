@@ -24,12 +24,12 @@ jobs:
             echo "##########"
             exit 1
           else
-            echo "$MP_PRIVATE_KEY" > private.key
+            echo "$MP_PRIVATE_KEY" > mp/private.key
           fi
       - uses: actions/setup-node@master
         with:
           node-version: '12.x'
       - run: |
           yarn
-          yarn build
-          yarn mp:upload
+          yarn build:mp
+          yarn upload:mp

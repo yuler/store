@@ -1,8 +1,8 @@
 const path = require('path');
 const {Project, upload} = require('miniprogram-ci');
 
-const {version, description} = require('../package.json');
-const {appid: appId} = require('../project.config.json');
+const {version, description} = require('../../package.json');
+const {appid: appId} = require('../../project.config.json');
 
 (async () => {
 	const project = new Project({
@@ -11,7 +11,6 @@ const {appid: appId} = require('../project.config.json');
 		projectPath: path.join(__dirname, '../'),
 		privateKeyPath: './private.key',
 		ignores: [
-			'.github',
 			'scripts',
 			'README.md',
 			'yarn.lock',
