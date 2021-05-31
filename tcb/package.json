@@ -1,0 +1,11 @@
+{
+  "name": "tcb",
+  "version": "0.0.1",
+  "description": "tencent cloud base operation",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "@cloudbase/manager-node": "^3.9.1"
+  }
+}

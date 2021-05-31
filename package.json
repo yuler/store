@@ -7,14 +7,17 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"postinstall": "husky install",
+		"dev:mp:ts": "(cd mp && tsc --watch)",
+		"dev:mp:css": "(cd mp && windicss --dev \"./**/*.wxml\" --config windi.config.cjs --output app.wxss)",
+		"dev:mp": "(run-p dev:mp:**)",
+		"dev:admin": "(cd admin && yarn dev)",
+		"build:mp:ts": "(cd mp && tsc)",
+		"build:mp:css": "(cd mp && windicss \"./**/*.wxml\" --config windi.config.cjs --output app.wxss)",
+		"build:mp": "npm run build:mp:ts && npm run build:mp:css",
+		"build:admin": "(cd admin && yarn build)",
+		"upload:mp": "(cd mp && node scripts/upload.cjs)",
 		"test": "xo && npm run build",
-		"build": "npm run build:ts && npm run build:css",
-		"build:ts": "tsc",
-		"build:css": "windicss 'mp/**/*.wxml' -f mp/windi.config.cjs -o mp/app.wxss",
-		"prettier": "prettier --write \"**/*.{js,ts,sjs,json,wxml,wxss,md}\"",
-		"mp:dev": "node scripts/dev",
-		"mp:upload": "node scripts/upload.cjs"
+		"prettier": "prettier --write \"**/*.{js,ts,sjs,json,wxml,wxss,md}\""
 	},
 	"lint-staged": {
 		"**/*.{js,ts,sjs,json,wxml,wxss,md}": "xo --fix"
@@ -24,12 +27,12 @@
 		"@yuler/tsconfig": "^0.2.0",
 		"@yuler/utils": "^0.1.2",
 		"chokidar": "^3.5.1",
-		"dotenv": "^10.0.0",
 		"eslint-config-xo-typescript": "^0.41.1",
 		"husky": "^5.1.1",
 		"lint-staged": "^10.5.4",
 		"miniprogram-api-typings": "^3.3.2",
 		"miniprogram-ci": "^1.0.98",
+		"npm-run-all": "^4.1.5",
 		"prettier": "^2.2.1",
 		"typescript": "^4.2.2",
 		"windicss": "^3.0.4",

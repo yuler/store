@@ -1,1 +1,1 @@
-<view> This is Debug page. </view>
+<view class="container"> This is Debug page. </view>

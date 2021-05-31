@@ -10,6 +10,7 @@ mp/app.wxss
 mp-cloud/test*
 
 admin/**/*.js
+tcb/**/*.js
 
 types/**/*.js
 
