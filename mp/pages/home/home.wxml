@@ -11,7 +11,9 @@
 	</view>
 
 	<view slot="main">
-		<view class="px-4">
+		<app-welcome class="bg-yellow-100 py-2 px-4 block" />
+
+		<view class="mt-4 px-4">
 			<view wx:for="{{products}}" wx:key="_id" wx:for-item="product"
 				bind:tap="gotoProduct"
 				data-id="{{product._id}}"

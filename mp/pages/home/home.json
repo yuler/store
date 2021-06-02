@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "app-banner": "/components/app-banner/app-banner"
+    "app-welcome": "/components/app-welcome/app-welcome"
   }
 }
