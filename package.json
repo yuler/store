@@ -7,6 +7,7 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
+		"postinstall": "husky install",
 		"dev:mp:ts": "(cd mp && tsc --watch)",
 		"dev:mp:css": "(cd mp && windicss --dev \"./**/*.wxml\" --config windi.config.cjs --output app.wxss)",
 		"dev:mp": "(run-p dev:mp:**)",
