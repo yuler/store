@@ -1,0 +1,4 @@
+<view class="flex items-baseline">
+    <view class="animate-swing text-4xl">👋</view>
+    <view class="text-xl ml-4">欢迎来到 Mini Store!</view>
+</view>
