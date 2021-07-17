@@ -24,7 +24,7 @@ jobs:
             echo "##########"
             exit 1
           else
-            echo "$MP_PRIVATE_KEY" > mp/private.key
+            echo "$MP_PRIVATE_KEY" > private.key
           fi
       - uses: actions/setup-node@master
         with:
