@@ -11,7 +11,7 @@ jobs:
     if: ${{ github.ref == 'refs/heads/main' }} || github.event.issue.pull_request && contains(github.event.issue.body, 'upload_miniprogram')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - shell: bash
         env:
           MP_PRIVATE_KEY: ${{ secrets.MP_PRIVATE_KEY }}
@@ -26,9 +26,9 @@ jobs:
           else
             echo "$MP_PRIVATE_KEY" > mp/private.key
           fi
-      - uses: actions/setup-node@master
+      - uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
+          node-version: '16.x'
       - run: |
           npm ci
           npm run build --workspace mp
