@@ -8,28 +8,27 @@
 .
 ├── ...
 ├── mp      # MiniProgram client
-├── www     # office web site
 ├── ...
 ```
 
 ## GitHub Actions
 
-- Add label `upload_miniprogram` for trigger `upload_miniprogram` workflow
+-   Add label `upload_miniprogram` for trigger `upload_miniprogram` workflow
 
 ## Tech Stacks
 
-- [WeChat MiniProgram](https://developers.weixin.qq.com/miniprogram/dev/framework/) for client entry
-- [WeChat Cloud](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
-- [WeUI 组件库](https://developers.weixin.qq.com/miniprogram/dev/extended/weui/)
-- [windicss](https://github.com/windicss/windicss) utility-first CSS framework
+-   [WeChat MiniProgram](https://developers.weixin.qq.com/miniprogram/dev/framework/) for client entry
+-   [WeChat Cloud](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
+-   [WeUI 组件库](https://developers.weixin.qq.com/miniprogram/dev/extended/weui/)
+-   [windicss](https://github.com/windicss/windicss) utility-first CSS framework
 
 ## Some Links
 
-- [Tencent Cloud Base](https://console.cloud.tencent.com/tcb)
+-   [Tencent Cloud Base](https://console.cloud.tencent.com/tcb)
 
 ## WeChat Devtools CLI
 
-- [CLI](https://developers.weixin.qq.com/miniprogram/dev/devtools/cli.html)
+-   [CLI](https://developers.weixin.qq.com/miniprogram/dev/devtools/cli.html)
 
 > Set alias on Mac
 
@@ -45,4 +44,4 @@ wechatwebdevtools cloud functions deploy -r -e test-7grt94kx72509f46 --project $
 
 ## Design
 
-- [WeChat MiniProgram on Figma](https://www.figma.com/file/d4hDNZV5GkNjLZdBlNbi2S/WeChat-MiniPorgram)
+-   [WeChat MiniProgram on Figma](https://www.figma.com/file/d4hDNZV5GkNjLZdBlNbi2S/WeChat-MiniPorgram)

@@ -2,7 +2,10 @@
 	"name": "store",
 	"version": "0.1.0",
 	"description": "A wechat miniprogram for mini store",
-	"keywords": [],
+	"keywords": [
+		"miniprogram",
+		"store"
+	],
 	"author": "is.yuler@gmail.com",
 	"license": "MIT",
 	"type": "module",
