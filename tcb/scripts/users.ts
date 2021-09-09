@@ -1,5 +1,6 @@
 import {config} from 'dotenv';
 import CloudBase from '@cloudbase/manager-node';
+// TODO:
 import {sleep} from '@yuler/utils';
 
 type User = {
@@ -25,7 +26,10 @@ async function enableUsernameLogin() {
 	const {ConfigList} = await manager.env.getLoginConfigList();
 	const usernameLogin = ConfigList.find(conf => conf.Platform === 'USERNAME');
 	if (usernameLogin?.Id) {
-		const result = await manager.env.updateLoginConfig(usernameLogin.Id, 'ENABLE');
+		const result = await manager.env.updateLoginConfig(
+			usernameLogin.Id,
+			'ENABLE'
+		);
 		console.log('Enable `USERNAME` login', {result});
 		return;
 	}
@@ -43,7 +47,7 @@ async function createAdministrator(username: string, password: string) {
 	const InstanceId = EnvInfo.Databases![0]?.InstanceId;
 
 	// DB collection query `username`
-	const {Data} = await manager.commonService('flexdb').call({
+	const {Data} = (await manager.commonService('flexdb').call({
 		Action: 'Query',
 		Param: {
 			Tag: InstanceId,
@@ -53,7 +57,7 @@ async function createAdministrator(username: string, password: string) {
 			}),
 			MgoLimit: 20
 		}
-	}) as {Data: string[]};
+	})) as {Data: string[]};
 	console.log('DB query exist administrator username:', {Data});
 
 	const user = JSON.parse(Data[0] ?? '{}') as User;
@@ -108,7 +112,7 @@ async function createAdministrator(username: string, password: string) {
 	// Update/Add in collection
 	let result;
 	if (user) {
-		result = await manager.commonService('flexdb').call({
+		result = (await manager.commonService('flexdb').call({
 			Action: 'UpdateItem',
 			Param: {
 				Tag: InstanceId,
@@ -124,22 +128,24 @@ async function createAdministrator(username: string, password: string) {
 					username
 				})
 			}
-		}) as {Data: string[]};
+		})) as {Data: string[]};
 	} else {
-		result = await manager.commonService('flexdb').call({
+		result = (await manager.commonService('flexdb').call({
 			Action: 'PutItem',
 			Param: {
 				Tag: InstanceId,
 				TableName: COLLECTION_USERS,
-				MgoDocs: [JSON.stringify({
-					uuid,
-					username,
-					password,
-					root: true,
-					roles: ['administrator']
-				})]
+				MgoDocs: [
+					JSON.stringify({
+						uuid,
+						username,
+						password,
+						root: true,
+						roles: ['administrator']
+					})
+				]
 			}
-		}) as {Data: string[]};
+		})) as {Data: string[]};
 	}
 
 	console.log('Update/Add in collection Success', {result});

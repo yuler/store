@@ -1,25 +1,15 @@
 {
-	"name": "store",
+	"private": true,
 	"version": "0.1.0",
-	"description": "A wechat miniprogram for mini store",
-	"keywords": [
-		"miniprogram",
-		"store"
+	"workspaces": [
+		"mp",
+		"mp-cloud",
+		"tcb"
 	],
-	"author": "is.yuler@gmail.com",
-	"license": "MIT",
-	"type": "module",
 	"scripts": {
 		"postinstall": "husky install",
-		"dev:mp:ts": "(cd mp && tsc --watch)",
-		"dev:mp:css": "(cd mp && windicss --dev \"./**/*.wxml\" --config windi.config.cjs --output app.wxss)",
-		"dev:mp": "(run-p dev:mp:**)",
 		"dev:admin": "(cd admin && yarn dev)",
-		"build:mp:ts": "(cd mp && tsc)",
-		"build:mp:css": "(cd mp && windicss \"./**/*.wxml\" --config windi.config.cjs --output app.wxss)",
-		"build:mp": "npm run build:mp:ts && npm run build:mp:css",
 		"build:admin": "(cd admin && yarn build)",
-		"upload:mp": "(cd mp && node scripts/upload.cjs)",
 		"test": "xo && npm run-p build:**",
 		"prettier": "prettier --write \"**/*.{js,ts,sjs,json,wxml,wxss,md}\""
 	},
@@ -29,13 +19,10 @@
 	"devDependencies": {
 		"@types/node": "^15.6.1",
 		"@yuler/tsconfig": "^0.2.0",
-		"@yuler/utils": "^0.1.2",
 		"chokidar": "^3.5.1",
 		"eslint-config-xo-typescript": "^0.41.1",
 		"husky": "^5.1.1",
 		"lint-staged": "^10.5.4",
-		"miniprogram-api-typings": "^3.3.2",
-		"miniprogram-ci": "^1.0.98",
 		"npm-run-all": "^4.1.5",
 		"prettier": "^2.2.1",
 		"typescript": "^4.2.2",

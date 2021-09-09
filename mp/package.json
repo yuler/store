@@ -1,4 +1,32 @@
 {
 	"name": "mp",
-	"description": "A wechat miniprogram for mini store"
+	"description": "A wechat miniprogram for mini store",
+	"version": "0.1.0",
+	"scripts": {
+		"test": "echo test",
+		"dev": "run-p dev:**",
+		"dev:ts": "tsc --watch",
+		"dev:css": "windicss --dev \"./**/*.wxml\" --config windi.config.cjs --output app.wxss",
+		"build": "run-p build:**",
+		"build:ts": "tsc",
+		"build:css": "windicss \"./**/*.wxml\" --config windi.config.cjs --output app.wxss",
+		"upload": "node scripts/upload.cjs"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yuler/store.git"
+	},
+	"keywords": [
+		"miniprogram"
+	],
+	"author": "yuler <is.yuler@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/yuler/store/issues"
+	},
+	"homepage": "https://github.com/yuler/store#readme",
+	"devDependencies": {
+		"miniprogram-api-typings": "^3.4.3",
+		"miniprogram-ci": "^1.6.1"
+	}
 }

@@ -1,11 +1,12 @@
 {
-  "name": "tcb",
-  "version": "0.0.1",
-  "description": "tencent cloud base operation",
-  "main": "index.js",
-  "type": "module",
-  "dependencies": {
-    "dotenv": "^10.0.0",
-    "@cloudbase/manager-node": "^3.9.1"
-  }
+	"name": "tcb",
+	"version": "0.0.1",
+	"description": "tencent cloud base operation",
+	"main": "index.js",
+	"type": "module",
+	"devDependencies": {
+		"@cloudbase/manager-node": "^3.9.1",
+		"@yuler/utils": "^0.1.2",
+		"dotenv": "^10.0.0"
+	}
 }

@@ -3,12 +3,12 @@ on:
   push:
     branches:
       - main
-  pull_request:
+  issue_comment:
     types: ['labeled']
 
 jobs:
   upload:
-    if: ${{ github.ref == 'refs/heads/main' }} || contains(github.event.pull_request.labels.*.name, 'upload_miniprogram')
+    if: ${{ github.ref == 'refs/heads/main' }} || github.event.issue.pull_request && contains(github.event.issue.body, 'upload_miniprogram')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -30,6 +30,6 @@ jobs:
         with:
           node-version: '12.x'
       - run: |
-          yarn
-          yarn build:mp
-          yarn upload:mp
+          npm ci
+          npm run build --workspace mp
+          npm run upload --workspace mp

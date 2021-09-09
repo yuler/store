@@ -11,10 +11,6 @@
 ├── ...
 ```
 
-## GitHub Actions
-
--   Add label `upload_miniprogram` for trigger `upload_miniprogram` workflow
-
 ## Tech Stacks
 
 -   [WeChat MiniProgram](https://developers.weixin.qq.com/miniprogram/dev/framework/) for client entry
@@ -22,13 +18,10 @@
 -   [WeUI 组件库](https://developers.weixin.qq.com/miniprogram/dev/extended/weui/)
 -   [windicss](https://github.com/windicss/windicss) utility-first CSS framework
 
-## Some Links
+## Refs
 
+-   [WeChat Devtools CLI](https://developers.weixin.qq.com/miniprogram/dev/devtools/cli.html)
 -   [Tencent Cloud Base](https://console.cloud.tencent.com/tcb)
-
-## WeChat Devtools CLI
-
--   [CLI](https://developers.weixin.qq.com/miniprogram/dev/devtools/cli.html)
 
 > Set alias on Mac
 
