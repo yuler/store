@@ -1,0 +1,42 @@
+name: Upload MiniProgram
+
+on:
+  pull_request:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    if: steps.check.outputs.triggered == 'true'
+    steps:
+      - uses: khan/pull-request-comment-trigger@master
+        id: check
+        with:
+          trigger: '#upload'
+          reaction: rocket
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: actions/checkout@master
+      - shell: bash
+        env:
+          MP_PRIVATE_KEY: ${{ secrets.MP_PRIVATE_KEY }}
+        run: |
+          if [[ -z $MP_PRIVATE_KEY ]]; then
+            echo "##########"
+            echo ""
+            echo "Please set 'MP_PRIVATE_KEY' key in actions secrets"
+            echo ""
+            echo "##########"
+            exit 1
+          else
+            echo "$MP_PRIVATE_KEY" > private.key
+          fi
+      - uses: actions/setup-node@master
+        with:
+          node-version: '16.x'
+      - run: |
+          npm install miniprogram-ci
+          npm run build --if-present
+          npm mp:upload

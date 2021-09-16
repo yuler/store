@@ -1,7 +1,7 @@
 {
 	"_": "https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
 	"projectname": "store",
-	"description": "project config",
+	"description": "wechat miniprogram project config",
 	"appid": "wx43d4fbc340a982bd",
 	"libVersion": "2.19.4",
 	"compileType": "miniprogram",
