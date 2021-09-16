@@ -12,5 +12,8 @@
 	},
 	"workspaces": [
 		"mp"
-	]
+	],
+	"devDependencies": {
+		"@yuler/tsconfig": "^0.2.0"
+	}
 }

@@ -1,0 +1,52 @@
+{
+	"_": "https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+	"projectname": "store",
+	"description": "project config",
+	"appid": "wx43d4fbc340a982bd",
+	"libVersion": "2.19.4",
+	"compileType": "miniprogram",
+	"miniprogramRoot": "mp/",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"enhance": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": false,
+		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": true,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"compileHotReLoad": true,
+		"lazyloadPlaceholderEnable": false,
+		"useMultiFrameRuntime": true,
+		"useApiHook": true,
+		"useApiHostProcess": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"enableEngineNative": false,
+		"useIsolateContext": true,
+		"userConfirmedBundleSwitch": false,
+		"packNpmManually": false,
+		"packNpmRelationList": [],
+		"minifyWXSS": true,
+		"disableUseStrict": false,
+		"showES6CompileOption": false,
+		"useCompilerPlugins": ["typescript"]
+	},
+	"condition": {}
+}

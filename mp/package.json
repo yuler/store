@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "echo mp: DEV",
+		"dev:ts": "",
 		"test": "echo mp: TEST"
 	},
 	"repository": {

@@ -1,4 +1,13 @@
 {
 	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode"
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"files.associations": {
+		"*.wxss": "css",
+		"*.wxml": "html",
+		"*.wxs": "javascript"
+	},
+	"windicss.sortOnSave": true,
+	"windicss.includeLanguages": {
+		"*.wxml": "html"
+	}
 }
