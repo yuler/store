@@ -1,24 +1,23 @@
 name: Upload MiniProgram
 
 on:
-  pull_request:
-    types: [opened]
   issue_comment:
     types: [created]
 
 jobs:
   upload:
     runs-on: ubuntu-latest
-    if: steps.check.outputs.triggered == 'true'
     steps:
       - uses: khan/pull-request-comment-trigger@master
-        id: check
+        if: ${{ github.event.issue.pull_request && steps.outputs.triggered == 'true' }}
         with:
-          trigger: '#upload'
+          trigger: '/upload'
           reaction: rocket
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@master
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - shell: bash
         env:
           MP_PRIVATE_KEY: ${{ secrets.MP_PRIVATE_KEY }}
@@ -39,4 +38,4 @@ jobs:
       - run: |
           npm install miniprogram-ci
           npm run build --if-present
-          npm mp:upload
+          npm run mp:upload
