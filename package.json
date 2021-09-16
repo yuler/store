@@ -3,7 +3,9 @@
 	"version": "0.0.0",
 	"description": "A store wechat miniprogram",
 	"private": true,
+	"type": "module",
 	"scripts": {
+		"mp:upload": "node scripts/upload-miniprogram.js",
 		"dev": "npm run dev --workspace",
 		"test": "npm run test --workspaces"
 	},
