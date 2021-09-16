@@ -5,7 +5,7 @@
 	"private": true,
 	"scripts": {
 		"dev": "npm run dev --workspace",
-		"test": "echo TODO"
+		"test": "npm run test --workspaces"
 	},
 	"engines": {
 		"node": ">=16"

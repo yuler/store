@@ -4,8 +4,8 @@
 	"description": "A store wechat miniprogram",
 	"main": "index.js",
 	"scripts": {
-		"dev": "echo TODO DEV mode",
-		"test": "echo TODO"
+		"dev": "echo mp: DEV",
+		"test": "echo mp: TEST"
 	},
 	"repository": {
 		"type": "git",
