@@ -1,0 +1,28 @@
+{
+	"name": "mp",
+	"version": "0.0.0",
+	"description": "A store wechat miniprogram",
+	"main": "index.js",
+	"scripts": {
+		"dev": "echo TODO DEV mode",
+		"test": "echo TODO"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yuler/store.git"
+	},
+	"keywords": [
+		"wechat",
+		"miniprogram",
+		"store"
+	],
+	"author": "yuler <is.yuler@gamil.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/yuler/store/issues"
+	},
+	"homepage": "https://github.com/yuler/store#readme",
+	"devDependencies": {
+		"miniprogram-api-typings": "^3.4.3"
+	}
+}

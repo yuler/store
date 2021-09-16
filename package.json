@@ -1,0 +1,16 @@
+{
+	"name": "store",
+	"version": "0.0.0",
+	"description": "A store wechat miniprogram",
+	"private": true,
+	"scripts": {
+		"dev": "npm run dev --workspace",
+		"test": "echo TODO"
+	},
+	"engines": {
+		"node": ">=16"
+	},
+	"workspaces": [
+		"mp"
+	]
+}
