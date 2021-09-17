@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "echo mp: DEV",
 		"dev:ts": "",
+		"build": "tsc",
 		"test": "echo mp: TEST"
 	},
 	"repository": {
