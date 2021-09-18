@@ -1,24 +1,26 @@
-name: Upload MiniProgram
+name: PR Comment Trigger
 
 on:
   issue_comment:
     types: [created]
 
 jobs:
-  upload:
+  pr_commented:
     runs-on: ubuntu-latest
     steps:
-      - uses: khan/pull-request-comment-trigger@master
-        if: ${{ github.event.issue.pull_request && steps.outputs.triggered == 'true' }}
+      - uses: yuler/pr-comment-trigger@main
+        id: 'pr'
         with:
           trigger: '/upload'
-          reaction: rocket
         env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: actions/checkout@master
+          GITHUB_TOKEN: '${{ github.token }}'
+      - name: Wait 2 seconds
+        run: sleep 2
+      - uses: actions/checkout@v2
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-      - shell: bash
+          ref: ${{ steps.pr.outputs.branch }}
+      - name: Check `MP_PRIVATE_KEY` secret
+        shell: bash
         env:
           MP_PRIVATE_KEY: ${{ secrets.MP_PRIVATE_KEY }}
         run: |
@@ -35,7 +37,8 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: '16.x'
-      - run: |
+      - name: Run mp:upload
+        run: |
           npm install miniprogram-ci
           npm run build --workspace=mp --if-present
           npm run mp:upload
