@@ -38,7 +38,21 @@ jobs:
         with:
           node-version: '16.x'
       - name: Run mp:upload
+        id: upload
         run: |
           npm install miniprogram-ci
           npm run build --workspace=mp --if-present
           npm run mp:upload
+      - name: Comment upload result
+        uses: actions/github-script@v4
+        with:
+          script: |
+            const fs = require('fs')
+            const result = fs.readFileSync('./upload-result.json')
+            const body = '🚀  Upload Result:\n```js\n' + result + '\n```'
+            github.issues.createComment({
+              body,
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            })

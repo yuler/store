@@ -3,3 +3,5 @@ node_modules
 
 # mp
 mp/**/*.js
+private.key
+upload-result.json

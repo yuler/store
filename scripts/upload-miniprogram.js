@@ -34,7 +34,12 @@ const result = await upload({
 		minifyWXSS: true,
 		autoPrefixWXSS: true,
 	},
-	onProgressUpdate: console.log,
+	// onProgressUpdate: console.log,
 })
+
+fs.writeFile(
+	resolve(__dirname, '../upload-result.json'),
+	JSON.stringify(result, null, 2),
+)
 
 console.log(result)
