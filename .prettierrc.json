@@ -9,7 +9,7 @@
 	"bracketSpacing": false,
 	"overrides": [
 		{
-			"files": ["*.yml", "*.yaml"],
+			"files": ["*.yml", "*.yaml", "*.md"],
 			"options": {
 				"useTabs": false,
 				"tabWidth": 2

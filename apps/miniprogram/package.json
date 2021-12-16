@@ -1,13 +1,11 @@
 {
-	"name": "mp",
+	"name": "miniprogram",
 	"version": "0.0.0",
 	"description": "A store wechat miniprogram",
 	"main": "index.js",
 	"scripts": {
-		"dev": "echo mp: DEV",
-		"dev:ts": "",
-		"build": "tsc",
-		"test": "echo mp: TEST"
+		"build": "esbuild **/*.ts --outdir=. --outbase=.",
+		"test": "echo 'TODO miniprogram test'"
 	},
 	"repository": {
 		"type": "git",
@@ -25,6 +23,8 @@
 	},
 	"homepage": "https://github.com/yuler/store#readme",
 	"devDependencies": {
-		"miniprogram-api-typings": "^3.4.3"
+		"esbuild": "^0.14.5",
+		"miniprogram-api-typings": "^3.4.3",
+		"tsconfig": "workspace:*"
 	}
 }

@@ -5,7 +5,7 @@
 	"appid": "wx43d4fbc340a982bd",
 	"libVersion": "2.19.4",
 	"compileType": "miniprogram",
-	"miniprogramRoot": "mp/",
+	"miniprogramRoot": "./",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"packOptions": {
@@ -38,15 +38,15 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"enableEngineNative": false,
-		"useIsolateContext": true,
+		"useIsolateContext": false,
 		"userConfirmedBundleSwitch": false,
 		"packNpmManually": false,
 		"packNpmRelationList": [],
 		"minifyWXSS": true,
 		"disableUseStrict": false,
 		"showES6CompileOption": false,
-		"useCompilerPlugins": ["typescript"]
+		"useCompilerPlugins": ["typescript"],
+		"minifyWXML": true
 	},
 	"condition": {}
 }

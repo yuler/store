@@ -1,7 +1,9 @@
 .DS_Store
 node_modules
 
-# mp
-mp/**/*.js
-private.key
-upload-result.json
+# miniprogram
+miniprogram/**/*.js
+private.*.key
+
+# turbo
+.turbo

@@ -1,7 +1,8 @@
 # Store
 
-> A store wechat miniprogram
+> A store
 
-## 技术栈
+## Teach Stacks
 
--   [微信小程序框架](https://developers.weixin.qq.com/miniprogram/dev/framework/)
+- [turbo](https://turborepo.org/)
+- [pnpm](https://pnpm.io/)
