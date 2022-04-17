@@ -1,0 +1,7 @@
+<view class="bg-white rounded-md flex -mt-5 p-4 justify-between items-center">
+    <view>
+        <view class="text-lg">欢迎来到喜茶 GO</view>
+        <view class="text-xs text-gray-800">更好的会员服务, 注册登录即可体验</view>
+    </view>
+    <view class="bg-black rounded-full text-white text-sm text-center py-1 w-20" bind:tap="onLogin">立即登录</view>
+</view>

@@ -1,0 +1,9 @@
+.app-icon {
+	display: inline-block;
+	vertical-align: middle;
+	mask-position: 50% 50%;
+	mask-size: cover;
+	-webkit-mask-size: cover;
+	mask-repeat: no-repeat;
+	background-color: currentColor;
+}

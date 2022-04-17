@@ -1,0 +1,52 @@
+<view>
+    <view class="bg-white w-full js-top">
+        <app-nav-bar />
+
+        <!-- Store information cover -->
+        <view class="px-4">
+            <div class="flex justify-between">
+                <view class="flex items-center">
+                    <app-icon name="star" />
+                    <view class="font-semibold ml-2">北京大兴大悦春风里点</view>
+                    <app-icon name="chevron-right" class="ml-2" />
+                </view>
+                <view class="font-semibold">堂食</view>
+            </div>
+            <view class="text-xs text-gray-400">距离您 4.3 km</view>
+        </view>
+    </view>
+
+    <!-- Store Menus -->
+    <view class="flex h-800 shadow" style="height: {{mainHeight}}px;">
+        <scroll-view class="bg-gray-100 pb-4 w-20 category" scroll-y="{{true}}">
+            <view class="text-xs p-4 {{categoryActiveId == menu.id ? 'categroy--active' : ''}}" wx:for="{{menus}}"
+                wx:key="id" wx:for-item="menu" id="{{menu.id}}" bind:tap="onCategoryClick">
+                {{menu.name}}
+            </view>
+        </scroll-view>
+        <scroll-view id="main" class="bg-white flex-1" scroll-y="{{true}}" scroll-with-animation="{{true}}"
+            scroll-into-view="{{scrollIntoView}}" bindscroll="onMainScroll">
+            <!-- TODO: Move to component -->
+            <view class="px-3" wx:for="{{menus}}" wx:key="id" wx:for-item="menu">
+                <view class="text-sm py-2 js-anchor" id="main-{{menu.id}}" data-id="{{menu.id}}">{{menu.name}}</view>
+                <view class="flex py-2" wx:for="{{menu.products}}" wx:key="id" wx:for-item="product">
+                    <image class="rounded h-20 w-20" src="{{product.images[0].url}}" mode="aspectFill" />
+                    <view class="flex-1 ml-2">
+                        <view class="font-bold text-sm">{{product.name}}</view>
+                        <view class="flex mt-1">
+                            <view class="rounded-sm bg-yellow-100 mr-2 py-2rpx px-10rpx text-yellow-500 text-2xs"
+                                wx:for="{{product.labels}}" wx:key="id" wx:for-item="label">
+                                {{label.name}}
+                            </view>
+                        </view>
+                        <view class="mt-1 text-xs text-gray-500">{{product.intro}}</view>
+                        <view class="flex mt-2 justify-between items-center">
+                            <view class="font-bold text-sm">¥ {{product.price}}</view>
+                            <app-button type="primary" size="small">选规格</app-button>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

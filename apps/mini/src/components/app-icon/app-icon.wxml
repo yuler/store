@@ -1,0 +1,5 @@
+<!-- refs: https://github.com/wechat-miniprogram/weui-miniprogram/blob/a94920e8f039d718b14d2a2862bd935efb453f7f/src/components/icon/icon.wxml -->
+
+<view class="app-icon app-icon__{{name}} w-5 h-5 {{clazz}}"
+    style="mask-image: {{markImageValue}}; -webkit-mask-image: {{markImageValue}}; -moz-mask-image: {{markImageValue}};" 
+/>

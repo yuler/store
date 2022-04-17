@@ -1,0 +1,69 @@
+<view class="page">
+    <app-nav-bar />
+
+    <view class="mt-4 px-2">
+        <!-- Store & Mobile Input Block -->
+        <view class="bg-white rounded p-4">
+            <view class="flex items-end">
+                <view class="font-bold text-sm">北京大兴大约春风里点</view>
+                <app-icon clazz="ml-2 w-4 h-4" name="chevron-right" />
+            </view>
+            <view class="mt-2 text-xs text-gray-400">距 【xxx 】步行 xxx 米，请确认门店后下单</view>
+            <view class="flex mt-2 items-center">
+                <view class="text-sm">联系电话</view>
+                <input class="flex-1 text-xs ml-2" placeholder="为了方便你去茶, 请填写手机号码" />
+                <app-button style="border:0;padding:0;height:auto;" type="primary">自动填写</app-button>
+            </view>
+        </view>
+
+        <!-- Waiting Block -->
+        <view class="bg-white rounded mt-2 p-4">
+            <view class="font-bold text-sm">取餐时间</view>
+            <view class="flex mt-2 text-sm">现在下单, 预计 <view class="text-green-400">26</view> 分钟后取餐</view>
+            <view class="mt-2 text-xs text-gray-400">杯杯现制，新鲜呈现，请你留意取餐通知</view>
+        </view>
+
+        <!-- Order Info Block -->
+        <view class="bg-white rounded mt-2 p-4">
+            <view class="flex items-center">
+                <app-icon name="volume" />
+                <view class="text-xs ml-1 text-gray-400">选购饮品，注意选对冰度和甜度</view>
+            </view>
+            <view class="flex mt-2">
+                <image class="rounded h-12 w-12" mode="widthFix"
+                    src="https://go.cdn.heytea.com/storage/ad/2022/03/18/bdb955612e9b444f958eab08e2ea2fcf.jpg-app" />
+                <view class="flex-1 ml-2">
+                    <view class="text-sm">芒芒xx</view>
+                    <view class="text-xs text-gray-400">xxxxxx</view>
+                </view>
+                <view>
+                    <view class="text-sm">¥ 19</view>
+                    <view class="text-xs text-gray-400">x 1</view>
+                </view>
+            </view>
+        </view>
+
+        <!-- Order Coupon & Remark -->
+        <view class="bg-white rounded mt-2 p-4">
+            <view class="flex items-center justify-between">
+                <view class="text-sm">优惠券</view>
+                <view class="flex items-center ">
+                    <view class="flex-1 mr-2 text-xs text-gray-400">开发中...</view>
+                    <app-icon name="chevron-right" />
+                </view>
+            </view>
+            <view class="flex mt-4 items-center justify-between">
+                <view class="text-sm">订单备注</view>
+                <view class="flex items-center ">
+                    <view class="flex-1 mr-2 text-xs text-gray-400">口味、包装要求等</view>
+                    <app-icon name="chevron-right" />
+                </view>
+            </view>
+        </view>
+
+        <view class="bg-white rounded flex mt-2 text-sm p-4 justify-between">
+            <view>支付方式</view>
+            <view>微信支付</view>
+        </view>
+    </view>
+</view>

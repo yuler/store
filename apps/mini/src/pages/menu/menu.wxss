@@ -1,0 +1,15 @@
+.categroy--active {
+	background: white;
+	font-weight: bold;
+	position: relative;
+}
+
+.categroy--active::after {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 4rpx;
+	background: black;
+	left: 0;
+	top: 0;
+}

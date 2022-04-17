@@ -1,0 +1,60 @@
+{
+	"_": "https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/app.html",
+	"pages": [
+		"pages/home",
+		"pages/menu/menu",
+		"pages/order/list",
+		"pages/me/me",
+		"pages/order/confirm"
+	],
+	"window": {
+		"navigationStyle": "custom",
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#fff",
+		"navigationBarTitleText": "Weixin",
+		"navigationBarTextStyle": "black"
+	},
+	"style": "v2",
+	"sitemapLocation": "sitemap.json",
+	"useExtendedLib": {
+		"weui": true
+	},
+	"tabBar": {
+		"color": "#9ca3af",
+		"selectedColor": "#000",
+		"list": [
+			{
+				"pagePath": "pages/home",
+				"text": "首页",
+				"iconPath": "static/icon-store.png",
+				"selectedIconPath": "static/icon-store.png"
+			},
+			{
+				"pagePath": "pages/menu/menu",
+				"text": "点单",
+				"iconPath": "static/icon-store.png",
+				"selectedIconPath": "static/icon-store.png"
+			},
+			{
+				"pagePath": "pages/order/list",
+				"text": "订单",
+				"iconPath": "static/icon-store.png",
+				"selectedIconPath": "static/icon-store.png"
+			},
+			{
+				"pagePath": "pages/me/me",
+				"text": "我的",
+				"iconPath": "static/icon-chat.png",
+				"selectedIconPath": "static/icon-chat.png"
+			}
+		]
+	},
+	"lazyCodeLoading": "requiredComponents",
+	"usingComponents": {
+		"mp-icon": "weui-miniprogram/icon/icon",
+		"app-icon": "/components/app-icon/app-icon",
+		"app-nav-bar": "/components/app-nav-bar/app-nav-bar",
+		"app-button": "/components/app-button/app-button",
+		"app-login-block": "/components/app-login-block/app-login-block"
+	}
+}

@@ -1,0 +1,11 @@
+<!-- 
+Wrap `button` component
+https://developers.weixin.qq.com/miniprogram/dev/component/button.html
+-->
+<button
+  class="app-button app-button--{{size}} app-button--{{type}} {{ disabled ? 'app-button--disabled' : ''}} {{clazz}}"
+  style="{{style}}"
+  disabled="{{disabled}}"
+>
+  <slot></slot>
+</button>

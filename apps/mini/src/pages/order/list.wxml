@@ -1,0 +1,41 @@
+<view class="page">
+    <app-nav-bar />
+
+    <view class="bg-white flex text-center pt-2">
+        <view class="flex-1  py-2 {{tab.id === tabActiveId && 'tab--active'}}"
+            wx:for="{{tabs}}"
+            wx:key="id"
+            wx:for-item="tab"
+            bind:tap="onClickTab"
+            data-tab="{{tab}}"
+        >
+            {{tab.name}}
+        </view>
+    </view>
+
+    <view class="p-2">
+        <!-- TODO: move to a component -->
+        <view class="bg-white rounded py-2 px-3">
+            <view class="flex justify-between">
+                <view>
+                    <view class="text-sm">北京中关村xxx</view>
+                    <view class="text-xs text-gray-400">2022-03-15 10:xx:xx</view>
+                </view>
+                <view class="flex text-sm items-center">
+                    <view class="text-gray-600">已完成</view>
+                    <app-icon name="chevron-right" />
+                </view>
+            </view>
+            <view class="flex text-xs py-4 items-center justify-between">
+                <image class="rounded h-12 w-12" mode="widthFix" src="https://go.cdn.heytea.com/storage/ad/2022/03/18/bdb955612e9b444f958eab08e2ea2fcf.jpg-app" />
+                <view class="text-gray-500">共 x 件</view>
+            </view>
+
+            <view class="flex justify-end">
+                <app-button>查看订单</app-button>
+                <app-button class="ml-2" type="primary">评价一下</app-button>
+                <app-button class="ml-2" type="primary">再来一单</app-button>
+            </view>
+        </view>
+    </view>
+</view>

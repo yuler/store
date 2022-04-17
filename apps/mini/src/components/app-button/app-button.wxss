@@ -1,0 +1,54 @@
+.app-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #fdfdfe;
+	box-sizing: border-box;
+	width: auto;
+	font-weight: normal;
+	border-radius: 4rpx;
+}
+
+/* Overwrite default styles */
+button:not([size='mini']) {
+	width: auto !important;
+	margin: 0 !important;
+}
+
+/* typs */
+.app-button--default {
+	color: #666;
+	background: transparent !important;
+	border: 2rpx solid #e8e8e8;
+}
+.app-button--primary {
+	background: transparent !important;
+	color: #ffc107;
+	border: 2rpx solid #ffc107;
+}
+.app-button--disabled {
+	color: white !important;
+	background: #e8e8e8 !important;
+	border: 2rpx solid #e8e8e8;
+}
+
+/* sizes */
+.app-button--large {
+	height: 72rpx;
+	padding: 0 28rpx;
+	font-size: 30rpx;
+	line-height: 72rpx;
+	font-weight: bold;
+}
+.app-button--medium {
+	height: 60rpx;
+	padding: 0 24rpx;
+	font-size: 26rpx;
+	line-height: 60rpx;
+}
+.app-button--small {
+	height: 48rpx;
+	padding: 0 18rpx;
+	font-size: 24rpx;
+	line-height: 48rpx;
+}

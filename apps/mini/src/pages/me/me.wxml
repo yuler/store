@@ -1,0 +1,50 @@
+<view>
+    <view class="bg-gray-200 h-30 text-center py-10">
+        TODO: Cover
+    </view>
+        
+    <view class="px-2">
+        <app-login-block />
+        
+        <!-- Vip Block -->
+        <view class="bg-white rounded-md mt-2 p-4">
+            <view class="text-lg">会员服务</view>
+
+            <view class="mt-4 text-center grid gap-y-2 grid-cols-4">
+                <view>
+                    <mp-icon type="field" icon="qr-code" size="{{20}}" />
+                    <view class="mt-2 text-xs text-gray-400">会员码</view>
+                </view>
+                <view>
+                    <app-icon name="check-circle" />
+                    <view class="mt-2 text-xs text-gray-400">任务中心</view>
+                </view>
+                <view>
+                    <app-icon name="bell" />
+                    <view class="mt-2 text-xs text-gray-400">消息中心</view>
+                </view>
+                <view>
+                    <app-icon name="credit-card" />
+                    <view class="mt-2 text-xs text-gray-400">发票助手</view>
+                </view>
+                <view>
+                    <app-icon name="headphones" />
+                    <view class="mt-2 text-xs text-gray-400">我的客服</view>
+                </view>
+                <view>
+                    <app-icon name="gift" />
+                    <view class="mt-2 text-xs text-gray-400">兑换中心</view>
+                </view>
+                <view>
+                    <app-icon name="message-square" />
+                    <view class="mt-2 text-xs text-gray-400">我的评价</view>
+                </view>
+                <view>
+                    <app-icon name="more-horizontal" />
+                    <view class="mt-2 text-xs text-gray-400">更多</view>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view>

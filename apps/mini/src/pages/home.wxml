@@ -1,0 +1,45 @@
+<view class="min-h-screen bg-gray-100 page">
+    <!-- TODO: Wrap to component -->
+    <!-- Banners -->
+    <!-- TODO: indicator style -->
+    <swiper class="w-full" style="height: {{bannerHeight}}px;" indicator-dots autoplay interval="2000">
+        <swiper-item wx:for="{{banners}}" wx:key="id" wx:for-item="banner">
+            <image class="w-full" mode="widthFix" src="{{banner.imageUrl}}" bind:load="onBannerImageLoaded"></image>
+        </swiper-item>
+    </swiper>
+
+    <view class="px-4 pb-2 relative">
+        <app-login-block />
+
+        <!-- Dine-in/Takeway Card -->
+        <view class="bg-white rounded-md mt-2">
+            <view class="flex text-center">
+                <view class="flex-1 p-2" bind:tap="gotoMenu">
+                    <image class="h-15 w-15" src="/static/icon-store.png" />
+                    <view class="font-bold text-lg">门店自取</view>
+                    <view class="mt-2 text-xs text-gray-400">下单免排队</view>
+                </view>
+                <view class="flex-1 p-2" bind:tap="gotoMenu">
+                    <image class="h-15 w-15" src="/static/icon-store.png" />
+                    <view class="font-bold text-lg">外卖</view>
+                    <view class="mt-2 text-xs text-gray-400">无接触配送，送喜到家</view>
+                </view>
+            </view>
+            <view class="flex py-2 px-6 items-center">
+                <app-icon name="user-plus" />
+                <view class="font-bold text-sm ml-2">一起喝</view>
+                <view class="ml-auto text-xs text-gray-400">好友一起点, 分账更方便</view>
+            </view>
+        </view>
+
+        <!-- Other Modules Card -->
+        <view class="flex -mx-1 mt-2">
+            <view class="rounded-md flex-1 mx-1 p-2 pb-0" wx:for="{{modules}}" wx:key="id" wx:for-item="module"
+                style="background: {{module.bgColor}};">
+                <view class="text-sm">{{ module.title}}</view>
+                <view class="mt-1 text-20rpx text-gray-400">{{ module.copywriting}}</view>
+                <image class="h-14 mt-2 w-14" mode="widthFix" src="{{module.imageUrl}}" />
+            </view>
+        </view>
+    </view>
+</view>

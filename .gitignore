@@ -1,0 +1,21 @@
+# Mac
+.DS_Store
+
+# Editor
+.idea
+
+# Node.js
+node_modules
+dist
+
+# Logs
+*.log
+*.logs
+
+# Env
+.env
+.env.*.local
+
+# apps
+/apps/mini/project.private.config.json
+/apps/mini/*.key

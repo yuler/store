@@ -1,0 +1,9 @@
+@import './windi.wxss';
+
+view {
+  box-sizing: border-box;
+}
+
+page {
+  background: rgba(243, 244, 246);
+}

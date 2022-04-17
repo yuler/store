@@ -1,0 +1,14 @@
+.tab--active {
+	font-weight: bold;
+	position: relative;
+}
+.tab--active::after {
+	content: '';
+	width: 150rpx;
+	height: 4rpx;
+	background: black;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+}
