@@ -11,6 +11,7 @@ importers:
       execa: ^6.1.0
       fast-glob: ^3.2.11
       prisma: ^3.12.0
+      ts-node: ^10.7.0
       typescript: ^4.6.3
     devDependencies:
       '@types/node': 17.0.24
@@ -20,6 +21,7 @@ importers:
       execa: 6.1.0
       fast-glob: 3.2.11
       prisma: 3.12.0
+      ts-node: 10.7.0_17a82b5ac88a5de7094eac76b4edda13
       typescript: 4.6.3
 
   apps/api:
@@ -55,7 +57,6 @@ importers:
       supertest: ^6.2.2
       ts-jest: ^27.1.4
       ts-loader: ^9.2.8
-      ts-node: ^10.7.0
       tsconfig-paths: ^3.14.1
     dependencies:
       '@nestjs/axios': 0.0.7_7670df531e7a1503cdbe395599f41db7
@@ -90,7 +91,6 @@ importers:
       supertest: 6.2.2
       ts-jest: 27.1.4_9985e1834e803358b7be1e6ce5ca0eea
       ts-loader: 9.2.8_typescript@4.6.3
-      ts-node: 10.7.0_719e7c013adecafa50303831d1b06222
       tsconfig-paths: 3.14.1
 
   apps/mini:
@@ -6399,7 +6399,7 @@ packages:
       pretty-format: 27.5.1
       slash: 3.0.0
       strip-json-comments: 3.1.1
-      ts-node: 10.7.0_719e7c013adecafa50303831d1b06222
+      ts-node: 10.7.0_17a82b5ac88a5de7094eac76b4edda13
     transitivePeerDependencies:
       - bufferutil
       - canvas
@@ -9270,7 +9270,7 @@ packages:
       typescript: 4.6.3
     dev: true
 
-  /ts-node/10.7.0_719e7c013adecafa50303831d1b06222:
+  /ts-node/10.7.0_17a82b5ac88a5de7094eac76b4edda13:
     resolution: {integrity: sha512-TbIGS4xgJoX2i3do417KSaep1uRAW/Lu+WAL2doDHC0D6ummjirVOXU5/7aiZotbQ5p1Zp9tP7U6cYhA0O7M8A==}
     hasBin: true
     peerDependencies:
@@ -9289,7 +9289,7 @@ packages:
       '@tsconfig/node12': 1.0.9
       '@tsconfig/node14': 1.0.1
       '@tsconfig/node16': 1.0.2
-      '@types/node': 16.11.27
+      '@types/node': 17.0.24
       acorn: 8.7.0
       acorn-walk: 8.2.0
       arg: 4.1.3
