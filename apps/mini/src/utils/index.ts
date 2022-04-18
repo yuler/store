@@ -6,5 +6,5 @@ export * from './promise'
 
 // Some uniapp API wrapper, start with `$`
 export function $goto(url: string) {
-	wx.navigateTo({url})
+  wx.navigateTo({url})
 }

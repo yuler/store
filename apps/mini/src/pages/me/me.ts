@@ -4,6 +4,6 @@ import enchangePage from '../../enchange-page'
 const $app = getApp<IApp>()
 
 enchangePage({
-	data: {},
-	onLoad() {},
+  data: {},
+  onLoad() {},
 })
