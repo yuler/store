@@ -8,7 +8,7 @@
 TODO:
 ## Features
 
-![体验版二维码](apps/mini/shots/mini-trial-qrcode.jpeg)
+![体验版二维码](./shots/mini-trial-qrcode.jpeg)
 -->
 
 ## Struct
@@ -20,7 +20,8 @@ TODO:
 │   └── mini # WeChat Miniprogram
 ├── packages
 │   └── shared # Share Utils
-└── prisma # Prisma Configs
+│── prisma # Prisma Configs
+└── shots # Screen Shots
 ```
 
 ## Tech Stacks
