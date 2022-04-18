@@ -51,6 +51,10 @@ TODO:
 
 - `docker pull --platform linux/amd64 mysql` # For M1 Mac
 
+## Refs
+
+- [Sequel Ace](https://github.com/Sequel-Ace/Sequel-Ace) Database Management Application
+
 <!--
 TODO:
 
