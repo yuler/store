@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  # refs: https://hub.docker.com/_/mysql
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_DATABASE: 'store'
+      MYSQL_USER: 'test'
+      MYSQL_PASSWORD: 'test'

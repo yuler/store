@@ -19,53 +19,53 @@
  * @returns A debounced function.
  */
 export function debounce<ArgumentsType extends unknown[], ReturnType>(
-	fn: (...args: ArgumentsType) => ReturnType,
-	wait = 0,
-	immediate = false,
+  fn: (...args: ArgumentsType) => ReturnType,
+  wait = 0,
+  immediate = false,
 ): DebouncedFunction<ArgumentsType, ReturnType> {
-	let timeout: number | undefined
-	let result: ReturnType
+  let timeout: number | undefined
+  let result: ReturnType
 
-	const debounced = function (this: any, ...args: ArgumentsType) {
-		const later = () => {
-			timeout = undefined
-			if (!immediate) {
-				result = fn.apply(this, args)
-			}
-		}
+  const debounced = function (this: any, ...args: ArgumentsType) {
+    const later = () => {
+      timeout = undefined
+      if (!immediate) {
+        result = fn.apply(this, args)
+      }
+    }
 
-		const shouldCallNow = immediate && !timeout
+    const shouldCallNow = immediate && !timeout
 
-		if (timeout) {
-			clearTimeout(timeout)
-		}
+    if (timeout) {
+      clearTimeout(timeout)
+    }
 
-		// @ts-ignore
-		timeout = setTimeout(later, wait)
+    // @ts-ignore
+    timeout = setTimeout(later, wait)
 
-		if (shouldCallNow) {
-			result = fn.apply(this, args)
-		}
+    if (shouldCallNow) {
+      result = fn.apply(this, args)
+    }
 
-		return result
-	}
+    return result
+  }
 
-	debounced.cancel = function () {
-		if (timeout) {
-			clearTimeout(timeout)
-			timeout = undefined
-		}
-	}
+  debounced.cancel = function () {
+    if (timeout) {
+      clearTimeout(timeout)
+      timeout = undefined
+    }
+  }
 
-	return debounced
+  return debounced
 }
 
 export interface DebouncedFunction<
-	ArgumentsType extends unknown[],
-	ReturnType,
+  ArgumentsType extends unknown[],
+  ReturnType,
 > {
-	(...args: ArgumentsType): ReturnType
-	cancel(): void
+  (...args: ArgumentsType): ReturnType
+  cancel(): void
 }
 
 /**
@@ -77,33 +77,33 @@ export interface DebouncedFunction<
  * @returns A throttled function.
  */
 export function throttle<ArgumentsType extends unknown[], ReturnType>(
-	fn: (...args: ArgumentsType) => ReturnType,
-	wait: number,
+  fn: (...args: ArgumentsType) => ReturnType,
+  wait: number,
 ): (...args: ArgumentsType) => ReturnType {
-	let timeout: number | undefined
-	let result: ReturnType
-	let last = 0
+  let timeout: number | undefined
+  let result: ReturnType
+  let last = 0
 
-	const throttled = function (this: any, ...args: ArgumentsType) {
-		const call = () => {
-			timeout = undefined
-			last = Date.now()
-			result = fn.apply(this, args)
-		}
+  const throttled = function (this: any, ...args: ArgumentsType) {
+    const call = () => {
+      timeout = undefined
+      last = Date.now()
+      result = fn.apply(this, args)
+    }
 
-		const delta = Date.now() - last
+    const delta = Date.now() - last
 
-		if (!timeout) {
-			if (delta >= wait) {
-				call()
-			} else {
-				// @ts-ignore
-				timeout = setTimeout(call, wait - delta)
-			}
-		}
+    if (!timeout) {
+      if (delta >= wait) {
+        call()
+      } else {
+        // @ts-ignore
+        timeout = setTimeout(call, wait - delta)
+      }
+    }
 
-		return result
-	}
+    return result
+  }
 
-	return throttled
+  return throttled
 }
