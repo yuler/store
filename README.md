@@ -28,6 +28,7 @@ TODO:
 - [PNPM](https://pnpm.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [WeChat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/)
+- [Windi CSS](https://windicss.org/)
 - [nestjs](https://nestjs.com/)
 - [Prisma](https://www.prisma.io/)
 
