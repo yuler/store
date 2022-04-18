@@ -20,7 +20,7 @@ TODO:
 │   └── mini # WeChat Miniprogram
 ├── packages
 │   └── shared # Share Utils
-└── README.md
+└── prisma # Prisma Configs
 ```
 
 ## Tech Stacks
@@ -28,6 +28,8 @@ TODO:
 - [PNPM](https://pnpm.io/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [WeChat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/)
+- [nestjs](https://nestjs.com/)
+- [Prisma](https://www.prisma.io/)
 
 ## Develop Guide
 
@@ -39,7 +41,19 @@ TODO:
 - `pnpm run --filter mini ide open` # Open the WeChat Devtool IDE
 - `gh secret set MP_PRIVATE_KEY < apps/mini/private.xxx.key` # Upload key to GitHub Secret
 
+### apps/api
+
+- `docker-compose up -d` # Up DB service
+- `pnpm run --filter api db:generate` # Prisma Generate Artifacts
+- `gh secret set -f .env` # Upload `.env` to GitHub Secret
+
+## Q/A
+
+- `docker pull --platform linux/amd64 mysql` # For M1 Mac
+
 <!--
 TODO:
+
 ## CI/CD
+
 -->
