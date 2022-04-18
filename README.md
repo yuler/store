@@ -44,7 +44,7 @@ TODO:
 ### apps/mini
 
 - `pnpm run --filter mini ide open` # Open the WeChat Devtool IDE
-- `gh secret set MP_PRIVATE_KEY < apps/mini/private.xxx.key` # Upload key to GitHub Secret
+- `gh secret set MINI_PRIVATE_KEY < apps/mini/private.xxx.key` # Upload key to GitHub Secret
 
 ### apps/api
 
