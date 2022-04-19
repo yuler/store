@@ -65,13 +65,6 @@ App<IApp>({
     $request('/profile', {method: 'GET'}).then(res => {
       console.log(res)
     })
-    /**
-     * Event emit to `home` page
-     * @example events
-     */
-    // setInterval(() => {
-    // 	this.$emit('app:tick', 'tick')
-    // }, 1000)
   },
 })
 
@@ -79,7 +72,7 @@ App<IApp>({
  * Wrap `console.log` with debug mode
  */
 function $log(this: IApp, namespace: string, ...args: unknown[]) {
-  getApp<IApp>().debug && console.log(`[${namespace}]: `, ...args)
+  getApp<IApp>().debug ?? console.log(`[${namespace}]: `, ...args)
 }
 
 /**
