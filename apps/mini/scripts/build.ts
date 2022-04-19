@@ -1,17 +1,3 @@
-// import path from 'node:path'
-// // import fs from 'node:fs/promises'
-
-// //
-// import glob from 'fast-glob'
-// import esbuild from 'esbuild'
-// import {execa} from 'execa'
-
-// import {dirname} from './_utils'
-
-// // Paths
-// const __dirname = dirname(import.meta)
-// const root = path.resolve(__dirname, '..')
-
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import {execa} from 'execa'
@@ -53,6 +39,7 @@ export function buildTS(paths: string[]) {
   esbuild.build({
     entryPoints: paths,
     outdir: 'dist',
+    logLevel: 'info',
   })
 }
 
@@ -74,5 +61,6 @@ export async function buildCopy(paths: string[]) {
     const dest = path.resolve(DIST, file.replace(/^src\//, ''))
     await ensureDir(dest)
     await fs.copyFile(src, dest)
+    console.log(`[copy]: ${file} => ${file.replace(/^src\//, '')}`)
   }
 }
