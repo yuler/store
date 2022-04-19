@@ -8,6 +8,7 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "scripts": {
+    "clean": "turbo run clean",
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",

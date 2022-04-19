@@ -6,8 +6,8 @@
   "author": "yuler <is.yuler@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf dist",
     "dev": "nest start --debug --watch",
-    "prebuild": "rm -rf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
