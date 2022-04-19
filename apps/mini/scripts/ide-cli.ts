@@ -5,6 +5,6 @@
 import {execa} from 'execa'
 import {IDE_CLI, APP} from './constants'
 
-const args = process.argv.slice(2)
+const args = process.argv.slice(2).filter(arg => arg !== '--')
 
 execa(IDE_CLI!, [...args, '--project', APP]).stdout?.pipe(process.stdout)

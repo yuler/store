@@ -16,6 +16,9 @@ dist
 .env
 .env.*.local
 
+# turbo
+.turbo
+
 # apps
 /apps/mini/project.private.config.json
 /apps/mini/*.key

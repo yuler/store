@@ -27,6 +27,7 @@ TODO:
 ## Tech Stacks
 
 - [PNPM](https://pnpm.io/)
+- [Turbo](https://turborepo.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [WeChat Miniprogram](https://developers.weixin.qq.com/miniprogram/dev/framework/)
 - [Windi CSS](https://windicss.org/)
@@ -37,6 +38,8 @@ TODO:
 
 - `pnpm install` # Install dependencies
 - `copy .env.example .env` # Setup environment variable
+- `pnpm run db:generate` # Prisma Generate Artifacts
+- `pnpm run db:deploy` # Prisma Migrate deploy
 
 ### apps/mini
 
@@ -46,7 +49,6 @@ TODO:
 ### apps/api
 
 - `docker-compose up -d` # Up DB service
-- `pnpm run --filter api db:generate` # Prisma Generate Artifacts
 - `gh secret set -f .env` # Upload `.env` to GitHub Secret
 
 ## Q/A

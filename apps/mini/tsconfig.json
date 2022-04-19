@@ -15,7 +15,7 @@
     "noUnusedParameters": true,
     "strict": true,
     "strictPropertyInitialization": true,
-    "module": "CommonJS",
+    "module": "ESNext",
     "lib": ["ESNext"],
     "types": ["@types/node", "miniprogram-api-typings"]
   },
