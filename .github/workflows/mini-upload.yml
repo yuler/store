@@ -1,0 +1,59 @@
+name: Mini Upload
+
+on:
+  push:
+    branches: [main, 'feature/**']
+    paths: ['apps/mini/**/*']
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Check `MINI_PRIVATE_KEY` secret
+        shell: bash
+        env:
+          MINI_PRIVATE_KEY: ${{ secrets.MINI_PRIVATE_KEY }}
+        run: |
+          if [[ -z $MINI_PRIVATE_KEY ]]; then
+            echo "##########"
+            echo ""
+            echo "Please set 'MINI_PRIVATE_KEY' key in actions secrets"
+            echo ""
+            echo "##########"
+            exit 1
+          else
+            echo "$MINI_PRIVATE_KEY" > private.key
+          fi
+
+      - uses: actions/setup-node@master
+        with:
+          node-version: '16.x'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6
+
+      - name: Run mp:upload
+        id: upload
+        run: |
+          pnpm install
+          pnpm run build --filter mini
+          pnpm run upload --filter mini
+
+      - name: Comment upload result
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs')
+            const result = fs.readFileSync('./apps/mini/upload-result.json.log')
+            const body = '🚀  Upload Result:\n```js\n' + result + '\n```'
+            github.rest.repos.createCommitComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              commit_sha: context.sha,
+              body,
+            })
