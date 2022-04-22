@@ -21,4 +21,4 @@ dist
 
 # apps
 /apps/mini/project.private.config.json
-/apps/mini/*.key
+private.*.key
