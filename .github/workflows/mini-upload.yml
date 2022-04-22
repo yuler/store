@@ -2,8 +2,11 @@ name: Mini Upload
 
 on:
   push:
-    branches: [main, 'feature/**']
-    paths: ['apps/mini/**/*']
+    branches:
+      - main
+      - 'feature/**'
+    paths:
+      - 'apps/mini/**'
 
 jobs:
   upload:

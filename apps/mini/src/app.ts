@@ -39,6 +39,7 @@ App<IApp>({
   gloablData: {},
 
   onLaunch() {
+    console.log('Test: for ci')
     /**
      * Save system info to `$system`
      * @url https://developers.weixin.qq.com/miniprogram/dev/api/base/system/wx.getSystemInfo.html
