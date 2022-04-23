@@ -23,4 +23,6 @@ jobs:
           password: ${{ secrets.HOST_PWD }}
           script: |
             cd $CODE
-            ./scripts/api-deply.sh
+            echo $CODE
+            ls -al
+            shell $CODE/scripts/api-deploy.sh
