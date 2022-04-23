@@ -3,6 +3,8 @@ import path from 'node:path'
 import {config} from 'dotenv'
 import {ROOT} from 'shared'
 
+export {ROOT}
+
 config({path: path.resolve(ROOT, '.env')})
 
 export const IDE_CLI = process.env.IDE_CLI

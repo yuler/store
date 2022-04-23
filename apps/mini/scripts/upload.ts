@@ -2,14 +2,14 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import ci from 'miniprogram-ci'
 import bytes from 'bytes'
-import {APP, PACKAGE_JSON, PROJECT_JSON} from './constants'
+import {ROOT, APP, PACKAGE_JSON, PROJECT_JSON} from './constants'
 
 // Upload miniporgram
 const project = new ci.Project({
   appid: PROJECT_JSON.appid,
   type: 'miniProgram',
   projectPath: APP,
-  privateKeyPath: path.resolve(APP, `./private.${PROJECT_JSON.appid}.key`),
+  privateKeyPath: path.resolve(ROOT, `./private.key`),
   ignores: ['scripts', 'README.md'],
 })
 const uploadResult = await ci.upload({

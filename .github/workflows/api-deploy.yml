@@ -1,0 +1,26 @@
+name: API Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - 'feature/**'
+    paths:
+      - 'apps/api/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: PM2 API Restart
+        uses: appleboy/ssh-action@master
+        env:
+          CODE: ${{ secrets.HOST_CODE }}
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_USER }}
+          password: ${{ secrets.HOST_PWD }}
+          script: |
+            cd $CODE
+            ./scripts/api-deply.sh
