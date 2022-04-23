@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - 'feature/**'
     paths:
       - 'apps/api/**'
 
@@ -21,6 +20,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.HOST_USER }}
           password: ${{ secrets.HOST_PWD }}
+          envs: CODE
           script: |
             cd $CODE
-            ./scripts/api-deply.sh
+            ./scripts/api-deploy.sh
