@@ -13,20 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-
-      - uses: actions/setup-node@master
+      - name: PM2 API Restart
+        uses: appleboy/ssh-action@master
+        env:
+          CODE: ${{ secrets.HOST_CODE }}
         with:
-          node-version: '16.x'
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2.0.1
-        with:
-          version: 6
-
-      - name: Run mp:upload
-        id: upload
-        run: |
-          pnpm install
-          pnpm --filter api build 
-          pnpm --filter api deploy
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_USER }}
+          password: ${{ secrets.HOST_PWD }}
+          script: |
+            cd $CODE
+            ./scripts/api-deply.sh

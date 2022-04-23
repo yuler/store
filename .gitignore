@@ -16,6 +16,9 @@ dist
 .env
 .env.*.local
 
+# TODO
+TODO
+
 # turbo
 .turbo
 
