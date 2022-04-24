@@ -1,7 +1,7 @@
 import {Controller, Get, Query} from '@nestjs/common'
 import {LoginService} from './login.service'
 
-@Controller('api/login')
+@Controller('/login')
 export class LoginController {
   constructor(private loginService: LoginService) {}
 

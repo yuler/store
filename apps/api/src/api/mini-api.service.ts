@@ -1,8 +1,12 @@
 import {HttpService} from '@nestjs/axios'
 import {Injectable} from '@nestjs/common'
 import {ConfigService} from '@nestjs/config'
-import {JwtService} from '@nestjs/jwt'
-import {firstValueFrom, map, Observable} from 'rxjs'
+import {firstValueFrom, map} from 'rxjs'
+
+interface MiniApiResponse {
+  errcode: number
+  errmsg: string
+}
 
 /**
  * Wrap some mini program apis
@@ -27,13 +31,25 @@ export class MiniApiService {
    * @param code string
    * @link https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/login/auth.code2Session.html
    */
-  jscode2session(code: string) {
+  code2Session(code: string): Promise<
+    {
+      openid: string
+      session_key: string
+      unionid?: string
+    } & MiniApiResponse
+  > {
     return firstValueFrom(
       this.httpService
-        .post(
-          `/sns/jscode2session?appid=${this.appId}&secret=${this.appSecret}&js_code=${code}&grant_type=authorization_code`,
-        )
+        .get(`/sns/jscode2session`, {
+          params: {
+            appid: this.appId,
+            secret: this.appSecret,
+            js_code: code,
+            grant_type: 'authorization_code',
+          },
+        })
         .pipe(
+          // TODO: throw Error if errcode is not 0
           map(response => {
             return response.data
           }),

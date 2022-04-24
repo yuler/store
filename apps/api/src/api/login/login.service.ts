@@ -10,7 +10,7 @@ export class LoginService {
   ) {}
 
   async login(code: string) {
-    const {session_key, openid} = await this.miniApiService.jscode2session(code)
+    const {session_key, openid} = await this.miniApiService.code2Session(code)
     const accessToken = this.authService.sign({session_key, openid})
     return {accessToken}
   }
