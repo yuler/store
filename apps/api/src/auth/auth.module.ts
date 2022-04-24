@@ -1,10 +1,12 @@
-import {Module} from '@nestjs/common'
+import {Global, Module} from '@nestjs/common'
 import {PassportModule} from '@nestjs/passport'
 import {JwtModule} from '@nestjs/jwt'
+import {AuthConroller} from './auth.controller'
 import {AuthService} from './auth.service'
 import {JwtStrategy} from './jwt.strategy'
 import {ConfigService} from '@nestjs/config'
 
+@Global()
 @Module({
   imports: [
     PassportModule,
@@ -16,6 +18,7 @@ import {ConfigService} from '@nestjs/config'
       }),
     }),
   ],
+  controllers: [AuthConroller],
   providers: [AuthService, JwtStrategy],
   exports: [AuthService],
 })

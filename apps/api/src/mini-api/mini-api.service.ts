@@ -1,11 +1,12 @@
 import {HttpService} from '@nestjs/axios'
 import {Injectable} from '@nestjs/common'
 import {ConfigService} from '@nestjs/config'
-import {firstValueFrom, map} from 'rxjs'
+import {firstValueFrom, map, throwError} from 'rxjs'
 
 interface MiniApiResponse {
   errcode: number
   errmsg: string
+  [key: string]: any
 }
 
 /**
@@ -38,6 +39,7 @@ export class MiniApiService {
       unionid?: string
     } & MiniApiResponse
   > {
+    // Warp a helper
     return firstValueFrom(
       this.httpService
         .get(`/sns/jscode2session`, {
@@ -49,8 +51,11 @@ export class MiniApiService {
           },
         })
         .pipe(
-          // TODO: throw Error if errcode is not 0
           map(response => {
+            const data = response.data
+            if (data.errcode !== 0) {
+              throw new Error(data.errmsg)
+            }
             return response.data
           }),
         ),
