@@ -9,11 +9,11 @@ class getLoginDto {
 }
 
 @Controller('/auth')
-export class AuthConroller {
-  constructor(private loginService: AuthService) {}
+export class AuthController {
+  constructor(private authService: AuthService) {}
 
   @Get('login')
   login(@Query() query: getLoginDto) {
-    return this.loginService.login(query.code)
+    return this.authService.login(query.code)
   }
 }
