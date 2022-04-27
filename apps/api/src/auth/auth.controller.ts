@@ -1,13 +1,19 @@
+import {IsNotEmpty, IsString} from 'class-validator'
 import {Controller, Get, Query} from '@nestjs/common'
 import {AuthService} from './auth.service'
+
+class getLoginDto {
+  @IsString()
+  @IsNotEmpty()
+  public code: string
+}
 
 @Controller('/auth')
 export class AuthConroller {
   constructor(private loginService: AuthService) {}
 
   @Get('login')
-  login(@Query() query: {code: string}) {
-    const {code} = query
-    return this.loginService.login(code)
+  login(@Query() query: getLoginDto) {
+    return this.loginService.login(query.code)
   }
 }
