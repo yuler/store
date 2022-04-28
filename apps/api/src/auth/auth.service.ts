@@ -1,5 +1,6 @@
 import {Injectable} from '@nestjs/common'
 import {JwtService} from '@nestjs/jwt'
+import {map} from 'rxjs'
 import {MiniApiService} from '../mini-api/mini-api.service'
 
 @Injectable()
@@ -13,9 +14,17 @@ export class AuthService {
     return this.jwtService.sign(payload)
   }
 
-  async login(code: string) {
-    const {session_key, openid} = await this.miniApiService.code2Session(code)
-    const accessToken = this.sign({session_key, openid})
-    return {accessToken}
+  login(code: string) {
+    return this.miniApiService.code2Session(code).pipe(
+      map(({data}) => {
+        console.log(data)
+        if (data.errcode !== 0) {
+          throw Error(data.errmsg)
+        }
+        const {session_key, openid} = data
+        const accessToken = this.sign({session_key, openid})
+        return {accessToken}
+      }),
+    )
   }
 }

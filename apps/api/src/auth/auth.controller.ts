@@ -13,7 +13,7 @@ export class AuthController {
   constructor(private authService: AuthService) {}
 
   @Get('login')
-  login(@Query() query: getLoginDto) {
-    return this.authService.login(query.code)
+  async login(@Query() query: getLoginDto) {
+    return await this.authService.login(query.code)
   }
 }

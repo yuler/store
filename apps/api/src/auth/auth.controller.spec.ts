@@ -3,13 +3,12 @@ import {ConfigModule, ConfigService} from '@nestjs/config'
 import {LoggerModule} from 'nestjs-pino'
 import {MiniApiModule} from '../mini-api/mini-api.module'
 import {PrismaModule} from '../prisma/prisma.module'
-import {AuthModule} from '../auth/auth.module'
 
 import {AuthController} from './auth.controller'
 import {AuthService} from './auth.service'
-import {AppModule} from '../app.module'
 import {PassportModule} from '@nestjs/passport'
 import {JwtModule} from '@nestjs/jwt'
+import {firstValueFrom} from 'rxjs'
 
 describe('AuthController', () => {
   let authController: AuthController
@@ -44,10 +43,7 @@ describe('AuthController', () => {
   describe('login', () => {
     it('should throw error', async () => {
       const code = '061Dfyll2Znu394ndRml2jZ4U31Dfylo'
-      //   console.log(await authController.login({code}))
-      expect(async () => await authService.login(code)).toThrow(
-        /invalid code/gi,
-      )
+      expect(await firstValueFrom(authService.login(code))).toBe(/code/gi)
     })
   })
 })
