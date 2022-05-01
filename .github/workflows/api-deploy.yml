@@ -15,12 +15,12 @@ jobs:
       - name: PM2 API Restart
         uses: appleboy/ssh-action@master
         env:
-          CODE: ${{ secrets.HOST_CODE }}
+          HOST_CODE: ${{ secrets.HOST_CODE }}
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.HOST_USER }}
           password: ${{ secrets.HOST_PWD }}
-          envs: CODE
+          envs: HOST_CODE
           script: |
-            cd $CODE
+            cd $HOST_CODE
             ./scripts/api-deploy.sh

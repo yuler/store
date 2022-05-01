@@ -1,9 +1,21 @@
+import {ValidationPipe} from '@nestjs/common'
 import {NestFactory} from '@nestjs/core'
+import {Logger} from 'nestjs-pino'
 import {AppModule} from './app.module'
-import {PrismaService} from './prisma.service'
+import {PrismaService} from './prisma/prisma.service'
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule)
+  const app = await NestFactory.create(AppModule, {
+    bufferLogs: true,
+  })
+
+  app.useLogger(app.get(Logger))
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      stopAtFirstError: true,
+    }),
+  )
 
   // refs: https://docs.nestjs.com/recipes/prisma#issues-with-enableshutdownhooks
   const prismaService = app.get(PrismaService)

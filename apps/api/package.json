@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist",
-    "dev": "nest start --debug --watch",
+    "dev": "nest start --watch",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
@@ -22,7 +22,6 @@
     "deploy": "./scripts/deploy.sh"
   },
   "dependencies": {
-    "@nestjs/axios": "^0.0.7",
     "@nestjs/common": "^8.4.4",
     "@nestjs/config": "^2.0.0",
     "@nestjs/core": "^8.4.4",
@@ -30,8 +29,13 @@
     "@nestjs/passport": "^8.2.1",
     "@nestjs/platform-express": "^8.4.4",
     "@prisma/client": "^3.12.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "got": "11",
+    "nestjs-pino": "^2.5.2",
     "passport": "^0.5.2",
     "passport-jwt": "^4.0.0",
+    "pino-http": "^6.6.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.5.5"
   },

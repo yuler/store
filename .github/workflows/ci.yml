@@ -33,4 +33,10 @@ jobs:
       - run: pnpm run build --if-present
 
       - name: Run tests
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_SECRET: ${{ secrets.APP_SECRET }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          JWT_EXPIRES: ${{ secrets.JWT_EXPIRES }}
         run: pnpm test

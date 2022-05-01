@@ -8,7 +8,7 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "scripts": {
-    "clean": "turbo run clean",
+    "clean": "turbo run clean && rm -rf .node_modules/.cache/turbo",
     "dev": "turbo run dev --parallel",
     "build": "turbo run build",
     "test": "turbo run test",

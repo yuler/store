@@ -1,22 +1,26 @@
 import {Test, TestingModule} from '@nestjs/testing'
+import {LoggerModule} from 'nestjs-pino'
 import {AppController} from './app.controller'
 import {AppService} from './app.service'
 
 describe('AppController', () => {
   let appController: AppController
+  let appService: AppService
 
   beforeEach(async () => {
-    const app: TestingModule = await Test.createTestingModule({
+    const module: TestingModule = await Test.createTestingModule({
+      imports: [LoggerModule.forRoot()],
       controllers: [AppController],
       providers: [AppService],
     }).compile()
 
-    appController = app.get<AppController>(AppController)
+    appController = await module.resolve(AppController)
+    appService = await module.resolve(AppService)
   })
 
   describe('root', () => {
-    it('should return "Hi!"', () => {
-      expect(appController.getHi()).toBe('Hi!')
+    it('should return home json', () => {
+      expect(appController.root()).toEqual(appService.home())
     })
   })
 })
