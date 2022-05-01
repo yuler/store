@@ -3,6 +3,6 @@
 git pull origin main
 pnpm install --frozen-lockfile
 pnpm run db:generate
-pnpm run db:migrate
+pnpm run db:deploy
 pnpm --filter api build
 pm2 restart api
