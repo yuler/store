@@ -9,5 +9,6 @@
   "windicss.sortOnSave": true,
   "windicss.includeLanguages": {
     "*.wxml": "html"
-  }
+  },
+  "eslint.workingDirectories": [{"mode": "auto"}]
 }
