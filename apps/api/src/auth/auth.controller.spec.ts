@@ -8,11 +8,9 @@ import {AuthController} from './auth.controller'
 import {AuthService} from './auth.service'
 import {PassportModule} from '@nestjs/passport'
 import {JwtModule} from '@nestjs/jwt'
-import {firstValueFrom} from 'rxjs'
 
 describe('AuthController', () => {
   let authController: AuthController
-  let authService: AuthService
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
@@ -37,13 +35,12 @@ describe('AuthController', () => {
     }).compile()
 
     authController = app.get<AuthController>(AuthController)
-    authService = app.get<AuthService>(AuthService)
   })
 
   describe('login', () => {
     it('should throw error', async () => {
       const code = '061Dfyll2Znu394ndRml2jZ4U31Dfylo'
-      expect(await firstValueFrom(authService.login(code))).toBe(/code/gi)
+      await expect(authController.login({code})).rejects.toThrow(/invalid code/)
     })
   })
 })
