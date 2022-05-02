@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "voorjaar.windicss-intellisense",
-    "prisma.prisma"
+    "prisma.prisma",
+    "johnsoncodehk.volar"
   ]
 }

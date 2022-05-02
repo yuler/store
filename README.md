@@ -16,12 +16,14 @@ TODO:
 ```bash
 /
 ├── apps
-│   │── api # Backend API
-│   └── mini # WeChat Miniprogram
+│   │── docs    # Documents
+│   │── api     # Backend API
+│   │── cms     # CMS
+│   └── mini    # WeChat Miniprogram
 ├── packages
-│   └── shared # Share Utils
-│── prisma # Prisma Configs
-└── shots # Screen Shots
+│   └── shared  # Shared Utils
+│── prisma      # Prisma Configs
+└── shots       # Screen Shots
 ```
 
 ## Tech Stacks
@@ -33,6 +35,7 @@ TODO:
 - [Windi CSS](https://windicss.org/)
 - [NestJS](https://nestjs.com/)
 - [Prisma](https://www.prisma.io/)
+- [Nuxt 3](https://v3.nuxtjs.org/)
 
 ## Develop Guide
 
