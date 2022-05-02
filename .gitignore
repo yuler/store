@@ -22,6 +22,12 @@ TODO
 # turbo
 .turbo
 
-# apps
+# apps/mini
 /apps/mini/project.private.config.json
 private.*.key
+
+# apps/cms
+.nuxt
+.nitro
+.output
+.cache

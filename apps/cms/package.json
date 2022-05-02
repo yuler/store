@@ -1,0 +1,21 @@
+{
+  "name": "cms",
+  "version": "0.0.0",
+  "description": "CMS system",
+  "author": "yuler <is.yuler@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf .nuxt .output dist",
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "ant-design-vue": "^3.2.2"
+  },
+  "devDependencies": {
+    "nuxt": "3.0.0-rc.1",
+    "unplugin-vue-components": "^0.19.3"
+  }
+}
