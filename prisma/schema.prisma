@@ -2,7 +2,9 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["filterJson"]
+
 }
 
 datasource db {
@@ -11,9 +13,92 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id     Int     @id @default(autoincrement())
+  name   String?
+  email  String? @unique
+  avatar String?
 
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
+
+  userMiniId Int?      @unique @map("user_mini_id")
+  userMini   UserMini? @relation(fields: [userMiniId], references: [id])
+
+  Order Order[]
   @@map("users")
+}
+
+model UserMini {
+  id         Int     @id @default(autoincrement())
+  openId     String  @unique @map("open_id")
+  unionId    String? @unique @map("union_id")
+  sessionKey String  @unique @map("session_key")
+
+  user User?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
+
+  @@map("user_minis")
+}
+
+model Product {
+  id          Int     @id @default(autoincrement())
+  name        String
+  summary     String?
+  description String
+  /// Separate with a comma
+  labels      String?
+  thumbnail   String?
+  /// Separate with a comma
+  images      String
+  /// Unit RMB cent
+  price       Int
+  sort        Int     @default(0)
+
+  categoryId Int?             @map("category_id")
+  category   ProductCategory? @relation(fields: [categoryId], references: [id])
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime  @default(now()) @updatedAt @map("updated_at")
+  deletedAt DateTime? @updatedAt @map("deleted_at")
+
+  @@map("products")
+}
+
+model ProductCategory {
+  id       Int       @id @default(autoincrement())
+  name     String
+  sort     Int       @default(0)
+  products Product[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
+
+  @@map("product_categories")
+}
+
+enum OrderStatus {
+  WAIT_PAY
+  CANCEL
+  PAID
+  REFUND
+}
+
+model Order {
+  id       Int         @id @default(autoincrement())
+  number   String      @unique
+  price    Int
+  status   OrderStatus
+  /// Product snapshot
+  products Json
+  note     String
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
+
+  @@map("orders")
 }
