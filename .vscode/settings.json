@@ -6,9 +6,16 @@
     "*.wxml": "wxml",
     "*.wxs": "javascript"
   },
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
   "windicss.sortOnSave": true,
   "windicss.includeLanguages": {
     "*.wxml": "html"
   },
-  "eslint.workingDirectories": [{"mode": "auto"}]
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ]
 }
