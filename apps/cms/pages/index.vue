@@ -1,12 +1,16 @@
 <template>
-  <div>
-    <h1>Index Page</h1>
-    <AButton>Demo</AButton>
-    <Hi></Hi>
-  </div>
+  <div>Loading...</div>
 </template>
 
 <script setup lang="ts">
-const count = ref(1)
-const double = computed(() => count.value * 2)
+definePageMeta({
+  layout: false,
+})
+
+const router = useRouter()
+
+onMounted(() => {
+  // TODO: Check login state
+  router.push({path: '/welcome'})
+})
 </script>

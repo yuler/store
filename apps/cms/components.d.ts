@@ -5,9 +5,15 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ABadge: typeof import('ant-design-vue/es')['Badge']
     AButton: typeof import('ant-design-vue/es')['Button']
+    AInputSearch: typeof import('ant-design-vue/es')['InputSearch']
+    AMenu: typeof import('ant-design-vue/es')['Menu']
+    AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
+    CrownOutlined: typeof import('@ant-design/icons-vue')['CrownOutlined']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SmileOutlined: typeof import('@ant-design/icons-vue')['SmileOutlined']
   }
 }
 
